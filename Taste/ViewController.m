@@ -20,7 +20,9 @@
     // Do any additional setup after loading the view, typically from a nib.
     NSString *string = @"My New string";
     NSString* str = @"Github sucks";
+    NSString* str2 = @"Github suckssss";
     NSString *random = @"random string";
+
 }
 
 
