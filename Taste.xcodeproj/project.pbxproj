@@ -15,6 +15,7 @@
 		07EDDA602202179C002CB951 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EDDA5F2202179C002CB951 /* main.m */; };
 		07EDDA6822022ABC002CB951 /* DetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EDDA6722022ABC002CB951 /* DetailedViewController.m */; };
 		07EDDA6B22023777002CB951 /* FoodSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EDDA6A22023777002CB951 /* FoodSearch.m */; };
+		07EDDA6E22024FFB002CB951 /* ColourAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EDDA6D22024FFB002CB951 /* ColourAnimator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		07EDDA6722022ABC002CB951 /* DetailedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailedViewController.m; sourceTree = "<group>"; };
 		07EDDA6922023777002CB951 /* FoodSearch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoodSearch.h; sourceTree = "<group>"; };
 		07EDDA6A22023777002CB951 /* FoodSearch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoodSearch.m; sourceTree = "<group>"; };
+		07EDDA6C22024FFB002CB951 /* ColourAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColourAnimator.h; sourceTree = "<group>"; };
+		07EDDA6D22024FFB002CB951 /* ColourAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColourAnimator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 				07EDDA512202179A002CB951 /* AppDelegate.m */,
 				07EDDA532202179A002CB951 /* ViewController.h */,
 				07EDDA542202179A002CB951 /* ViewController.m */,
+				07EDDA6C22024FFB002CB951 /* ColourAnimator.h */,
+				07EDDA6D22024FFB002CB951 /* ColourAnimator.m */,
 				07EDDA562202179A002CB951 /* Main.storyboard */,
 				07EDDA6922023777002CB951 /* FoodSearch.h */,
 				07EDDA6A22023777002CB951 /* FoodSearch.m */,
@@ -155,6 +160,7 @@
 				07EDDA602202179C002CB951 /* main.m in Sources */,
 				07EDDA6822022ABC002CB951 /* DetailedViewController.m in Sources */,
 				07EDDA522202179A002CB951 /* AppDelegate.m in Sources */,
+				07EDDA6E22024FFB002CB951 /* ColourAnimator.m in Sources */,
 				07EDDA6B22023777002CB951 /* FoodSearch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
