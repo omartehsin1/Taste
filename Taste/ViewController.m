@@ -21,6 +21,8 @@
     NSString *string = @"My New string";
     NSString* str = @"Github sucks";
     NSString* str2 = @"Github suckssss";
+    NSString *random = @"random string";
+
 }
 
 
