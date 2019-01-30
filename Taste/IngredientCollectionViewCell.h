@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  IngredientCollectionViewCell.h
 //  Taste
 //
 //  Created by David on 2019-01-30.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ViewController : UIViewController
+@interface IngredientCollectionViewCell : UICollectionViewCell
 
 @end
 

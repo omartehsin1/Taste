@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  RecipeCollectionViewCell.h
 //  Taste
 //
 //  Created by David on 2019-01-30.
@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Recipe.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ViewController : UIViewController
+@interface RecipeCollectionViewCell : UICollectionViewCell
+
+@property (weak, nonatomic) Recipe* recipe;
 
 @end
 
