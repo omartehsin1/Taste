@@ -18,7 +18,7 @@
     [super viewDidLoad];
     NSString* myString = @"hello";
     // Do any additional setup after loading the view, typically from a nib.
-    NSString *string = @"My New string";
+    NSString *string = @"My New string ??";
 }
 
 
