@@ -15,6 +15,7 @@
 #import "DetailViewController.h"
 #import "FoodSearch.h"
 
+
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView* foodCollectionVC;
@@ -48,13 +49,13 @@
         self.search = @"beef";
     }
     else if (self.search != nil ) {
-        self.search = self.textTyped.text;
+        self.search = [self.textTyped.text stringByReplacingOccurrencesOfString:@" " withString:@","];
         
     }
-    NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=1aae8d12cab0f476475ea76b9b4cb637&q=%@&page=1", self.search];
+    NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=0110ce5d72cbc701edcd6047d4eb8f00&q=%@&page=1", self.search];
     //NSString *inPutUrl = @"https://www.food2fork.com/api/search?key=29f2a594050bcf25be3fd8071f18924d&q=chicken%20breast&page=2";
-    //NSURL *url = [NSURL URLWithString:@"https://www.food2fork.com/api/search?key=29f2a594050bcf25be3fd8071f18924d&q=chicken%20breast&page=2"];
-    NSURL* url = [NSURL URLWithString:inPutUrl];
+    NSURL *url = [NSURL URLWithString:inPutUrl];
+    //NSURL* url = [NSURL URLWithString:[inPutUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]]];
     NSURLRequest* request = [NSURLRequest requestWithURL: url];
     NSURLSessionTask* task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^
                               (NSData * _Nullable data,
@@ -101,20 +102,16 @@
 -(void) animateBackgroundColour {
     ColourAnimator *colourAnimator = [[ColourAnimator alloc]init];
     [UIView animateWithDuration:2.5 animations:^{
-        //        RecipeCollectionViewCell *rcv = [[RecipeCollectionViewCell alloc]init];
-        //        rcv.backgroundColor = [colourAnimator colourGenerator];
+        self.foodCollectionVC.backgroundColor = [colourAnimator colourGenerator];
         self.backgroundview.backgroundColor = [colourAnimator colourGenerator];
         self.textDisplayView.backgroundColor = [colourAnimator colourGenerator];
-        
     } completion:NULL];
     
 }
 
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    NSString* str = [[NSString alloc]init];
-    [str stringByReplacingOccurrencesOfString:@" " withString:@","];
-    self.search = str;
+    //self.search = [str stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
     [self fetchData];
     [self.foodCollectionVC reloadData];
     [self.view endEditing:YES];
