@@ -15,7 +15,7 @@
 
 
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
-//@property (weak, nonatomic) IBOutlet UICollectionView* foodCollectionVC;
+@property (weak, nonatomic) IBOutlet UICollectionView* foodCollectionVC;
 @property (nonatomic) NSArray<Recipe*> * recepiesData;
 @property (nonatomic) NSMutableArray* recepies;
 @property (nonatomic) NSString* search;
@@ -25,8 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //self.foodCollectionVC.dataSource = self;
-    //self.foodCollectionVC.delegate = self;
+    self.foodCollectionVC.dataSource = self;
+    self.foodCollectionVC.delegate = self;
     [self fetchData];
 }
 
@@ -52,7 +52,7 @@
                                   }
                                   self.recepiesData = self.recepies;
                                   [NSOperationQueue.mainQueue addOperationWithBlock:^{
-                                      //[self.foodCollectionVC reloadData];
+                                      [self.foodCollectionVC reloadData];
                                   }];
                               }];
     [task resume];
