@@ -7,6 +7,8 @@
 //
 
 #import "RecipeCollectionViewCell.h"
+#import "ColourAnimator.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface RecipeCollectionViewCell ()
 @property (weak, nonatomic) IBOutlet UILabel* foodLabel;
@@ -19,6 +21,11 @@
 
 -(void)awakeFromNib {
     [super awakeFromNib];
+    self.foodImage.layer.masksToBounds = true;
+    self.foodImage.layer.borderWidth = 1.5;
+    self.foodImage.layer.borderColor = [UIColor blueColor].CGColor;
+    self.foodImage.layer.cornerRadius = self.foodImage.bounds.size.width/2;
+    
     [self addObserver:self forKeyPath:@"self.recipe.image" options:(NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew) context:nil];
 }
 
@@ -40,6 +47,5 @@
     self.foodLabel.text = recipe.label;
     self.foodImage.image = recipe.image;
 }
-
 
 @end

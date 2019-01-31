@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Taste/ColourAnimator.m"
-            timestampString = "570585173.988058"
+            timestampString = "570670917.0781"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Taste/ColourAnimator.m"
-            timestampString = "570585173.98866"
+            timestampString = "570670917.07866"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Taste/ViewController.m"
-            timestampString = "570662246.9792399"
+            timestampString = "570670917.0790499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Taste/ViewController.m"
-            timestampString = "570662246.979888"
+            timestampString = "570670917.0796961"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "-fetchData"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,29 +74,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Taste/ViewController.m"
-            timestampString = "570662246.98019"
+            timestampString = "570670917.080066"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "-fetchData"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Taste/ViewController.m"
-            timestampString = "570662246.980451"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "-fetchData"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ViewController fetchData]"
+                  moduleName = "Taste"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Omar/Desktop/LighthouseLabsAssignments/Week4/MidtermProject/Taste/Taste/ViewController.m"
+                  timestampString = "570670850.748016"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "581">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_.72"
+                  moduleName = "Taste"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Omar/Desktop/LighthouseLabsAssignments/Week4/MidtermProject/Taste/Taste/ViewController.m"
+                  timestampString = "570670850.755643"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
