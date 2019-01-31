@@ -69,6 +69,49 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Hello" borderStyle="roundedRect" placeholder="Enter Food" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="68H-yb-YU5">
+                                <rect key="frame" x="20" y="67" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="go"/>
+                                <connections>
+                                    <action selector="searchTextfield:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="U74-hw-jdG"/>
+                                </connections>
+                            </textField>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="d5s-Cg-nOo" userLabel="Top Collection View">
+                                <rect key="frame" x="0.0" y="105" width="414" height="108"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G0G-Xu-FzR">
+                                    <size key="itemSize" width="102" height="105"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="recipeCell" id="Xdf-sf-zR3">
+                                        <rect key="frame" x="0.0" y="0.0" width="102" height="105"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="102" height="105"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4yE-J7-HoZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="102" height="105"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="4yE-J7-HoZ" secondAttribute="height" multiplier="34:35" id="8t8-Fd-Q1F"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="4yE-J7-HoZ" firstAttribute="leading" secondItem="Xdf-sf-zR3" secondAttribute="leading" id="59F-dR-siV"/>
+                                            <constraint firstAttribute="trailing" secondItem="4yE-J7-HoZ" secondAttribute="trailing" id="5bb-1J-XsV"/>
+                                            <constraint firstAttribute="bottom" secondItem="4yE-J7-HoZ" secondAttribute="bottom" id="Bam-yn-dSx"/>
+                                            <constraint firstItem="4yE-J7-HoZ" firstAttribute="top" secondItem="Xdf-sf-zR3" secondAttribute="top" id="q4C-0T-VaX"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D6M-HK-1Ad" userLabel="Text Display View">
                                 <rect key="frame" x="0.0" y="221" width="414" height="128"/>
                                 <subviews>
