@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Recipe : NSObject
-@property (nonatomic) NSString* lable;
+@property (nonatomic) NSString* label;
 @property (nonatomic) NSString* imageURl;
 @property (nonatomic) NSString* url;
 @property (nonatomic) UIImage * image;
@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSInteger* yield;
 @property (nonatomic) NSString* shareAs;
 @property (nonatomic) float calories;
+@property(nonatomic, strong) NSURLSessionTask *imageTask;
+-(void)loadImage;
 
 - (instancetype)initWithJsonDictionary:(NSDictionary*)key;
 + (Recipe *)fromJsonDictionary:(NSDictionary *)dictionary;
