@@ -22,36 +22,46 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="d5s-Cg-nOo" userLabel="Top Collection View">
-                                        <rect key="frame" x="0.0" y="128" width="414" height="94"/>
+                                        <rect key="frame" x="0.0" y="110" width="414" height="112"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G0G-Xu-FzR">
-                                            <size key="itemSize" width="102" height="94"/>
+                                            <size key="itemSize" width="110" height="106"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="recipeCell" id="Xdf-sf-zR3">
-                                                <rect key="frame" x="0.0" y="0.0" width="102" height="94"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="110" height="106"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="102" height="94"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="106"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4yE-J7-HoZ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="102" height="105"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="110" height="82"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" secondItem="4yE-J7-HoZ" secondAttribute="height" multiplier="34:35" id="8t8-Fd-Q1F"/>
+                                                                <constraint firstAttribute="width" secondItem="4yE-J7-HoZ" secondAttribute="height" multiplier="34:35" constant="30.342857142857142" id="8t8-Fd-Q1F"/>
                                                             </constraints>
                                                         </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bgX-PH-Hg2">
+                                                            <rect key="frame" x="34" y="84" width="43" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                 </view>
                                                 <constraints>
+                                                    <constraint firstAttribute="bottomMargin" secondItem="bgX-PH-Hg2" secondAttribute="bottom" constant="-3" id="1gv-Up-kZ9"/>
                                                     <constraint firstItem="4yE-J7-HoZ" firstAttribute="leading" secondItem="Xdf-sf-zR3" secondAttribute="leading" id="59F-dR-siV"/>
                                                     <constraint firstAttribute="trailing" secondItem="4yE-J7-HoZ" secondAttribute="trailing" id="5bb-1J-XsV"/>
-                                                    <constraint firstAttribute="bottom" secondItem="4yE-J7-HoZ" secondAttribute="bottom" id="Bam-yn-dSx"/>
+                                                    <constraint firstAttribute="bottom" secondItem="4yE-J7-HoZ" secondAttribute="bottom" constant="24" id="Bam-yn-dSx"/>
+                                                    <constraint firstItem="bgX-PH-Hg2" firstAttribute="leading" secondItem="Xdf-sf-zR3" secondAttribute="leadingMargin" constant="26" id="X8d-gn-UZx"/>
+                                                    <constraint firstItem="bgX-PH-Hg2" firstAttribute="centerX" secondItem="4yE-J7-HoZ" secondAttribute="centerX" id="jeY-dW-zhX"/>
                                                     <constraint firstItem="4yE-J7-HoZ" firstAttribute="top" secondItem="Xdf-sf-zR3" secondAttribute="top" id="q4C-0T-VaX"/>
+                                                    <constraint firstItem="bgX-PH-Hg2" firstAttribute="top" secondItem="4yE-J7-HoZ" secondAttribute="bottom" constant="2" id="zMu-eJ-KnA"/>
                                                 </constraints>
                                             </collectionViewCell>
                                         </cells>
