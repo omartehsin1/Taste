@@ -7,25 +7,38 @@
 //
 
 #import "ViewController.h"
+#import "ColourAnimator.h"
+
+
 #import "Recipe.h"
 #import "RecipeCollectionViewCell.h"
 #import "Ingredient.h"
 #import "IngredientCollectionViewCell.h"
 #import "DetailViewController.h"
 
-
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
-
 @property (weak, nonatomic) IBOutlet UICollectionView* foodCollectionVC;
 @property (nonatomic) NSArray<Recipe*> * recepiesData;
 @property (nonatomic) NSMutableArray* recepies;
 @property (nonatomic) NSString* search;
+//@property (nonatomic, strong) ColourAnimator *colourAnimator;
+@property (weak, nonatomic) IBOutlet UIView *backgroundview;
+@property (weak, nonatomic) IBOutlet UIView *textDisplayView;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    int backgroundLoop = 0;
+    ColourAnimator *colourAnimator = [[ColourAnimator alloc]init];
+    //self.backgroundview.backgroundColor = [UIColor orangeColor];
+//    while (backgroundLoop < colourAnimator.colourWheel.count - 1) {
+//        backgroundLoop++;
+//        [UIView animateWithDuration:2.5 animations:^{
+//            self.textDisplayView.backgroundColor = [colourAnimator colourGenerator];
+//        } completion:NULL];
+//    }
     self.foodCollectionVC.dataSource = self;
     self.foodCollectionVC.delegate = self;
     [self fetchData];
@@ -69,6 +82,10 @@
     return cell;
 }
 
+-(void) animateBackgroundColour {
+    
+}
+
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.recepiesData.count;
 }
@@ -79,8 +96,6 @@
     Recipe* recipeFromCell = recipeToSendCell.recipe;
     dvc.recipeInfo = recipeFromCell;
 }
-
-
 
 
 @end
