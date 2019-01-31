@@ -8,8 +8,6 @@
 
 #import "ViewController.h"
 #import "ColourAnimator.h"
-
-
 #import "Recipe.h"
 #import "RecipeCollectionViewCell.h"
 #import "Ingredient.h"
@@ -24,6 +22,7 @@
 //@property (nonatomic, strong) ColourAnimator *colourAnimator;
 @property (weak, nonatomic) IBOutlet UIView *backgroundview;
 @property (weak, nonatomic) IBOutlet UIView *textDisplayView;
+
 @end
 
 @implementation ViewController
@@ -33,6 +32,13 @@
     self.foodCollectionVC.dataSource = self;
     self.foodCollectionVC.delegate = self;
    [self fetchData];
+}
+- (IBAction)searchTextfield:(UITextField *)sender {
+    NSString* str = [sender.text stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+    self.search = str;
+    [self fetchData];
+    [_foodCollectionVC reloadData];
+    [self.view endEditing:YES];
 }
 
 -(void)fetchData{

@@ -112,7 +112,7 @@
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wdd-wY-SbG" userLabel="Bottom Collection View">
                                 <rect key="frame" x="0.0" y="357" width="414" height="373"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="373" id="Sfw-JP-kMo"/>
                                 </constraints>
@@ -145,9 +145,8 @@
                                             <constraint firstAttribute="bottom" secondItem="beC-Mq-WP9" secondAttribute="bottom" id="QKc-bg-0wf"/>
                                         </constraints>
                                         <connections>
-                                            <segue destination="ez0-cW-DeR" kind="show" identifier="cellToDetail" id="1Gt-as-2fw"/>
-
                                             <outlet property="foodImage" destination="beC-Mq-WP9" id="icM-6c-Vb0"/>
+                                            <segue destination="ez0-cW-DeR" kind="show" identifier="cellToDetail" id="1Gt-as-2fw"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -189,10 +188,10 @@
             </objects>
             <point key="canvasLocation" x="1157.9710144927537" y="790.76086956521749"/>
         </scene>
-        <!--Detailed View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="3T8-wb-oeh">
             <objects>
-                <viewController id="ez0-cW-DeR" customClass="DetailedViewController" sceneMemberID="viewController">
+                <viewController id="ez0-cW-DeR" customClass="DetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D9J-7g-TdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -216,7 +215,7 @@
                         <viewLayoutGuide key="safeArea" id="9hg-Qb-sd4"/>
                     </view>
                     <connections>
-                        <outlet property="webView" destination="Xzo-7N-2uw" id="EPV-9Q-ffY"/>
+                        <outlet property="webView" destination="Xzo-7N-2uw" id="bAy-aF-tcX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GtB-jj-Ia7" userLabel="First Responder" sceneMemberID="firstResponder"/>
