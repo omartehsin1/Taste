@@ -19,6 +19,7 @@
 		07EDDA8B22027AC6002CB951 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EDDA8422027AC6002CB951 /* Recipe.m */; };
 		07EDDA8C22027AC6002CB951 /* IngredientCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EDDA8622027AC6002CB951 /* IngredientCollectionViewCell.m */; };
 		07EDDA8E22027B82002CB951 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07EDDA8D22027B82002CB951 /* Main.storyboard */; };
+		07EDDA9122027E15002CB951 /* ColourAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EDDA9022027E15002CB951 /* ColourAnimator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		07EDDA8622027AC6002CB951 /* IngredientCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientCollectionViewCell.m; sourceTree = "<group>"; };
 		07EDDA8722027AC6002CB951 /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
 		07EDDA8D22027B82002CB951 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		07EDDA8F22027E13002CB951 /* ColourAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColourAnimator.h; sourceTree = "<group>"; };
+		07EDDA9022027E15002CB951 /* ColourAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColourAnimator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,8 @@
 				07EDDA6922023777002CB951 /* FoodSearch.h */,
 				07EDDA6A22023777002CB951 /* FoodSearch.m */,
 				07EDDA8D22027B82002CB951 /* Main.storyboard */,
+				07EDDA8F22027E13002CB951 /* ColourAnimator.h */,
+				07EDDA9022027E15002CB951 /* ColourAnimator.m */,
 				07EDDA592202179C002CB951 /* Assets.xcassets */,
 				07EDDA5B2202179C002CB951 /* LaunchScreen.storyboard */,
 				07EDDA5E2202179C002CB951 /* Info.plist */,
@@ -171,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07EDDA9122027E15002CB951 /* ColourAnimator.m in Sources */,
 				07EDDA552202179A002CB951 /* ViewController.m in Sources */,
 				07EDDA602202179C002CB951 /* main.m in Sources */,
 				07EDDA8922027AC6002CB951 /* RecipeCollectionViewCell.m in Sources */,
