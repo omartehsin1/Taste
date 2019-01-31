@@ -32,11 +32,11 @@
     [super viewDidLoad];
     self.foodCollectionVC.dataSource = self;
     self.foodCollectionVC.delegate = self;
-    [self fetchData];
+   [self fetchData];
 }
 
 -(void)fetchData{
-    // https://api.edamam.com/search?q={ingredients go here}&app_id=ecacded3&app_key=935ae12374e7cbb6f82dc1b513aa7dbb
+    
     if (self.search == nil) {
         self.search = @"chicken";
     }
@@ -93,10 +93,13 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    DetailViewController* dvc = [segue destinationViewController];
-    RecipeCollectionViewCell* recipeToSendCell = sender;
-    Recipe* recipeFromCell = recipeToSendCell.recipe;
-    dvc.recipeInfo = recipeFromCell;
+    if ([segue.identifier isEqualToString:@"cellToDetail"]){
+        DetailViewController* dvc = [segue destinationViewController];
+        RecipeCollectionViewCell* recipeToSendCell = sender;
+        Recipe* recipeFromCell = recipeToSendCell.recipe;
+        dvc.recipeInfo = recipeFromCell;
+    }
+
 }
 
 

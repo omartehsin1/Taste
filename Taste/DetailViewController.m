@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 
 @interface DetailViewController ()
+@property (weak, nonatomic) IBOutlet WKWebView *webView;
 
 @end
 
@@ -16,17 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    NSString* recipeUrl = self.recipeInfo.shareAs;
+    NSURL* url = [NSURL URLWithString:@"https://www.google.com/"];
+    NSURLRequest* request = [NSURLRequest requestWithURL:url];
+    [self.webView loadRequest:request];
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
