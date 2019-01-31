@@ -2,6 +2,26 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key></key>
+	<string></string>
+	<key>LSApplicationCategoryType</key>
+	<string>&lt;key&gt;NSAppTransportSecurity&lt;/key&gt;
+&lt;dict&gt;
+    &lt;key&gt;NSExceptionDomains&lt;/key&gt;
+    &lt;dict&gt;
+        &lt;key&gt;YOURHOST.COM&lt;/key&gt;
+        &lt;dict&gt;
+            &lt;key&gt;NSIncludesSubdomains&lt;/key&gt;
+            &lt;true/&gt;
+            &lt;key&gt;NSTemporaryExceptionAllowsInsecureHTTPLoads&lt;/key&gt;
+            &lt;true/&gt;
+            &lt;key&gt;NSTemporaryExceptionMinimumTLSVersion&lt;/key&gt;
+            &lt;string&gt;1.0&lt;/string&gt;
+            &lt;key&gt;NSTemporaryExceptionRequiresForwardSecrecy&lt;/key&gt;
+            &lt;false/&gt;
+        &lt;/dict&gt;
+    &lt;/dict&gt;
+&lt;/dict&gt;</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

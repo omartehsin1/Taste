@@ -14,7 +14,7 @@
 {
     self = [super init];
     if (self) {
-        self.lable = key[@"lable"];
+        self.label = key[@"label"];
         self.imageURl = key[@"image"];
         self.url = key[@"url"];
         self.shareAs = key[@"shareAs"];

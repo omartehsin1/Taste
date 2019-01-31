@@ -144,6 +144,9 @@
                                             <constraint firstItem="beC-Mq-WP9" firstAttribute="top" secondItem="JvB-sF-Stq" secondAttribute="top" id="Lkg-Rj-MG6"/>
                                             <constraint firstAttribute="bottom" secondItem="beC-Mq-WP9" secondAttribute="bottom" id="QKc-bg-0wf"/>
                                         </constraints>
+                                        <connections>
+                                            <segue destination="ez0-cW-DeR" kind="show" identifier="cellToDetail" id="1Gt-as-2fw"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -191,13 +194,32 @@
                     <view key="view" contentMode="scaleToFill" id="D9J-7g-TdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xzo-7N-2uw">
+                                <rect key="frame" x="0.0" y="64" width="414" height="652"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Xzo-7N-2uw" firstAttribute="top" secondItem="9hg-Qb-sd4" secondAttribute="top" id="fzw-HY-9aH"/>
+                            <constraint firstItem="Xzo-7N-2uw" firstAttribute="trailing" secondItem="9hg-Qb-sd4" secondAttribute="trailing" id="lpi-dA-19Y"/>
+                            <constraint firstItem="9hg-Qb-sd4" firstAttribute="bottom" secondItem="Xzo-7N-2uw" secondAttribute="bottom" constant="20" id="nWy-uC-3dx"/>
+                            <constraint firstItem="Xzo-7N-2uw" firstAttribute="leading" secondItem="9hg-Qb-sd4" secondAttribute="leading" id="xWw-ly-oqQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9hg-Qb-sd4"/>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="Xzo-7N-2uw" id="EPV-9Q-ffY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GtB-jj-Ia7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2128" y="785"/>
+            <point key="canvasLocation" x="2127.536231884058" y="784.23913043478262"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Usb-zu-B9S">

@@ -32,24 +32,19 @@
     [super viewDidLoad];
     int backgroundLoop = 0;
     ColourAnimator *colourAnimator = [[ColourAnimator alloc]init];
-    //self.backgroundview.backgroundColor = [UIColor orangeColor];
-//    while (backgroundLoop < colourAnimator.colourWheel.count - 1) {
-//        backgroundLoop++;
-//        [UIView animateWithDuration:2.5 animations:^{
-//            self.textDisplayView.backgroundColor = [colourAnimator colourGenerator];
-//        } completion:NULL];
-//    }
     self.foodCollectionVC.dataSource = self;
     self.foodCollectionVC.delegate = self;
-    [self fetchData];
+   [self fetchData];
 }
 
 -(void)fetchData{
-    // https://api.edamam.com/search?q={ingredients go here}&app_id=ecacded3&app_key=935ae12374e7cbb6f82dc1b513aa7dbb
+    
     if (self.search == nil) {
         self.search = @"chicken";
     }
-    NSString* inPutUrl = [NSString stringWithFormat: @"https://api.edamam.com/search?q=%@&app_id=ecacded3&app_key=935ae12374e7cbb6f82dc1b513aa7dbb", self.search];
+    //https://www.food2fork.com/api/search?key=1aae8d12cab0f476475ea76b9b4cb637&q=shredded%20chicken
+    //NSString* inPutUrl = [NSString stringWithFormat: @"https://api.edamam.com/search?q=%@&app_id=ecacded3&app_key=935ae12374e7cbb6f82dc1b513aa7dbb", self.search];
+    NSString* inPutUrl = [NSString stringWithFormat: @"https://www.food2fork.com/api/search?key=1aae8d12cab0f476475ea76b9b4cb637&q=chicken"];
     NSURL* url = [NSURL URLWithString:inPutUrl];
     NSURLRequest* request = [NSURLRequest requestWithURL: url];
     NSURLSessionTask* task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^
@@ -58,7 +53,7 @@
                                NSError * _Nullable error) {
                                   NSError* jsonError;
                                   NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options: 0 error: &jsonError];
-                                  NSArray* recipeObjects = json[@"hits"][@"recipe"];
+                                  NSArray* recipeObjects = json[@"recipes"];
                                   self.recepies = [[NSMutableArray alloc]init];
                                   for (NSDictionary* recipeDictionary in recipeObjects){
                                       Recipe* aRecipe = [Recipe fromJsonDictionary:recipeDictionary];
@@ -91,10 +86,13 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    DetailViewController* dvc = [segue destinationViewController];
-    RecipeCollectionViewCell* recipeToSendCell = sender;
-    Recipe* recipeFromCell = recipeToSendCell.recipe;
-    dvc.recipeInfo = recipeFromCell;
+    if ([segue.identifier isEqualToString:@"cellToDetail"]){
+        DetailViewController* dvc = [segue destinationViewController];
+        RecipeCollectionViewCell* recipeToSendCell = sender;
+        Recipe* recipeFromCell = recipeToSendCell.recipe;
+        dvc.recipeInfo = recipeFromCell;
+    }
+
 }
 
 

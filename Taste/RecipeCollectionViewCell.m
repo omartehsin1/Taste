@@ -20,7 +20,7 @@
 
 -(void)setRecipe:(Recipe *)recipe{
     _recipe = recipe;
-    self.foodLable.text = recipe.lable;
+    self.foodLable.text = recipe.label;
     self.foodImage.image = recipe.image;
 }
 
