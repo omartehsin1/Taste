@@ -26,7 +26,10 @@
                                 <rect key="frame" x="20" y="67" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="go"/>
+                                <connections>
+                                    <action selector="searchTextfield:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="U74-hw-jdG"/>
+                                </connections>
                             </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="d5s-Cg-nOo" userLabel="Top Collection View">
                                 <rect key="frame" x="0.0" y="105" width="414" height="108"/>

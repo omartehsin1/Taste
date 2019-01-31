@@ -21,7 +21,6 @@
 @property (nonatomic) NSMutableArray* recepiesArray;
 @property (nonatomic) NSString* search;
 @property (nonatomic) NSString* displayText;
-//@property (nonatomic, strong) ColourAnimator *colourAnimator;
 @property (weak, nonatomic) IBOutlet UIView *backgroundview;
 @property (weak, nonatomic) IBOutlet UIView *textDisplayView;
 
@@ -34,26 +33,25 @@
     [self animateBackgroundColour];
     self.foodCollectionVC.dataSource = self;
     self.foodCollectionVC.delegate = self;
+    if (self.search == nil) {
+        self.search = @"chicken";
+    }
    [self fetchData];
 }
 - (IBAction)searchTextfield:(UITextField *)sender {
     NSString* str = [sender.text stringByReplacingOccurrencesOfString:@" " withString:@"_"];
     self.search = str;
     [self fetchData];
-    [_foodCollectionVC reloadData];
+    [self.foodCollectionVC reloadData];
+    [self.view reloadInputViews];
     [self.view endEditing:YES];
+    [self resignFirstResponder];
 }
 
 -(void)fetchData{
-    
     FoodSearch *foodSearch = [[FoodSearch alloc]initWithSearchTextField:self.search andSearchTextDisplayLabel:self.displayText];
     foodSearch.searchTextDisplayLabel = foodSearch.searchTextField;
-    
-    
-    if (self.search == nil) {
-        self.search = @"chicken";
-    }
-    NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=29f2a594050bcf25be3fd8071f18924d&q=%@&page=1", self.search];
+    NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=1aae8d12cab0f476475ea76b9b4cb637&q=%@&page=1", self.search];
     //NSString *inPutUrl = @"https://www.food2fork.com/api/search?key=29f2a594050bcf25be3fd8071f18924d&q=chicken%20breast&page=2";
     //NSURL *url = [NSURL URLWithString:@"https://www.food2fork.com/api/search?key=29f2a594050bcf25be3fd8071f18924d&q=chicken%20breast&page=2"];
     NSURL* url = [NSURL URLWithString:inPutUrl];
