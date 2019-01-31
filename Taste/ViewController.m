@@ -15,12 +15,17 @@
 #import "DetailViewController.h"
 #import "FoodSearch.h"
 
-@interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet UICollectionView* foodCollectionVC;
 @property (nonatomic) NSArray<Recipe*> * recepiesData;
+@property (weak, nonatomic) IBOutlet UITextField *textTyped;
+
 @property (nonatomic) NSMutableArray* recepiesArray;
 @property (nonatomic) NSString* search;
 @property (nonatomic) NSString* displayText;
+@property (nonatomic) NSArray *recipes;
+@property (nonatomic) NSArray *searchResults;
 //@property (nonatomic, strong) ColourAnimator *colourAnimator;
 @property (weak, nonatomic) IBOutlet UIView *backgroundview;
 @property (weak, nonatomic) IBOutlet UIView *textDisplayView;
@@ -36,24 +41,17 @@
     self.foodCollectionVC.delegate = self;
    [self fetchData];
 }
-- (IBAction)searchTextfield:(UITextField *)sender {
-    NSString* str = [sender.text stringByReplacingOccurrencesOfString:@" " withString:@"_"];
-    self.search = str;
-    [self fetchData];
-    [_foodCollectionVC reloadData];
-    [self.view endEditing:YES];
-}
+
 
 -(void)fetchData{
-    
-    FoodSearch *foodSearch = [[FoodSearch alloc]initWithSearchTextField:self.search andSearchTextDisplayLabel:self.displayText];
-    foodSearch.searchTextDisplayLabel = foodSearch.searchTextField;
-    
-    
     if (self.search == nil) {
-        self.search = @"chicken";
+        self.search = @"beef";
     }
-    NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=29f2a594050bcf25be3fd8071f18924d&q=%@&page=1", self.search];
+    else if (self.search != nil ) {
+        self.search = self.textTyped.text;
+        
+    }
+    NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=1aae8d12cab0f476475ea76b9b4cb637&q=%@&page=1", self.search];
     //NSString *inPutUrl = @"https://www.food2fork.com/api/search?key=29f2a594050bcf25be3fd8071f18924d&q=chicken%20breast&page=2";
     //NSURL *url = [NSURL URLWithString:@"https://www.food2fork.com/api/search?key=29f2a594050bcf25be3fd8071f18924d&q=chicken%20breast&page=2"];
     NSURL* url = [NSURL URLWithString:inPutUrl];
@@ -82,7 +80,7 @@
 }
 
 
-
+#pragma mark - Collection View Delegate
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     RecipeCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"recipeCell" forIndexPath:indexPath];
     cell.tag = indexPath.item;
@@ -92,11 +90,19 @@
     return cell;
 }
 
+
+
+- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.recepiesData.count;
+}
+
+
+
 -(void) animateBackgroundColour {
     ColourAnimator *colourAnimator = [[ColourAnimator alloc]init];
     [UIView animateWithDuration:2.5 animations:^{
-//        RecipeCollectionViewCell *rcv = [[RecipeCollectionViewCell alloc]init];
-//        rcv.backgroundColor = [colourAnimator colourGenerator];
+        //        RecipeCollectionViewCell *rcv = [[RecipeCollectionViewCell alloc]init];
+        //        rcv.backgroundColor = [colourAnimator colourGenerator];
         self.backgroundview.backgroundColor = [colourAnimator colourGenerator];
         self.textDisplayView.backgroundColor = [colourAnimator colourGenerator];
         
@@ -104,8 +110,15 @@
     
 }
 
-- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.recepiesData.count;
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    NSString* str = [[NSString alloc]init];
+    [str stringByReplacingOccurrencesOfString:@" " withString:@","];
+    self.search = str;
+    [self fetchData];
+    [self.foodCollectionVC reloadData];
+    [self.view endEditing:YES];
+    return true;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -117,6 +130,7 @@
     }
 
 }
+
 
 
 @end
