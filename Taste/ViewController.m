@@ -15,12 +15,14 @@
 #import "Ingredient.h"
 #import "IngredientCollectionViewCell.h"
 #import "DetailViewController.h"
+#import "FoodSearch.h"
 
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView* foodCollectionVC;
 @property (nonatomic) NSArray<Recipe*> * recepiesData;
 @property (nonatomic) NSMutableArray* recepiesArray;
 @property (nonatomic) NSString* search;
+@property (nonatomic) NSString* displayText;
 //@property (nonatomic, strong) ColourAnimator *colourAnimator;
 @property (weak, nonatomic) IBOutlet UIView *backgroundview;
 @property (weak, nonatomic) IBOutlet UIView *textDisplayView;
@@ -30,6 +32,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self animateBackgroundColour];
     self.foodCollectionVC.dataSource = self;
     self.foodCollectionVC.delegate = self;
    [self fetchData];
@@ -37,13 +40,17 @@
 
 -(void)fetchData{
     
+    FoodSearch *foodSearch = [[FoodSearch alloc]initWithSearchTextField:self.search andSearchTextDisplayLabel:self.displayText];
+    foodSearch.searchTextDisplayLabel = foodSearch.searchTextField;
+    
+    
     if (self.search == nil) {
         self.search = @"chicken";
     }
-    //NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=29f2a594050bcf25be3fd8071f18924d&q=chicken%20breast&page=2", self.search];
+    NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=29f2a594050bcf25be3fd8071f18924d&q=%@&page=1", self.search];
     //NSString *inPutUrl = @"https://www.food2fork.com/api/search?key=29f2a594050bcf25be3fd8071f18924d&q=chicken%20breast&page=2";
-    NSURL *url = [NSURL URLWithString:@"https://www.food2fork.com/api/search?key=29f2a594050bcf25be3fd8071f18924d&q=chicken%20breast&page=2"];
-    //NSURL* url = [NSURL URLWithString:inPutUrl];
+    //NSURL *url = [NSURL URLWithString:@"https://www.food2fork.com/api/search?key=29f2a594050bcf25be3fd8071f18924d&q=chicken%20breast&page=2"];
+    NSURL* url = [NSURL URLWithString:inPutUrl];
     NSURLRequest* request = [NSURLRequest requestWithURL: url];
     NSURLSessionTask* task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^
                               (NSData * _Nullable data,
@@ -81,9 +88,12 @@
 
 -(void) animateBackgroundColour {
     ColourAnimator *colourAnimator = [[ColourAnimator alloc]init];
-    self.backgroundview.backgroundColor = [UIColor orangeColor];
     [UIView animateWithDuration:2.5 animations:^{
+//        RecipeCollectionViewCell *rcv = [[RecipeCollectionViewCell alloc]init];
+//        rcv.backgroundColor = [colourAnimator colourGenerator];
+        self.backgroundview.backgroundColor = [colourAnimator colourGenerator];
         self.textDisplayView.backgroundColor = [colourAnimator colourGenerator];
+        
     } completion:NULL];
     
 }
