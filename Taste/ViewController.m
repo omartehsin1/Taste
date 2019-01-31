@@ -26,7 +26,6 @@
 @property (nonatomic) NSString* displayText;
 @property (nonatomic) NSArray *recipes;
 @property (nonatomic) NSArray *searchResults;
-//@property (nonatomic, strong) ColourAnimator *colourAnimator;
 @property (weak, nonatomic) IBOutlet UIView *backgroundview;
 @property (weak, nonatomic) IBOutlet UIView *textDisplayView;
 
@@ -39,17 +38,17 @@
     [self animateBackgroundColour];
     self.foodCollectionVC.dataSource = self;
     self.foodCollectionVC.delegate = self;
+    if (self.search == nil) {
+        self.search = @"chicken";
+    }
    [self fetchData];
 }
-
-
 -(void)fetchData{
     if (self.search == nil) {
         self.search = @"beef";
     }
     else if (self.search != nil ) {
-        self.search = self.textTyped.text;
-        
+        self.search = self.textTyped.text;    
     }
     NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=1aae8d12cab0f476475ea76b9b4cb637&q=%@&page=1", self.search];
     //NSString *inPutUrl = @"https://www.food2fork.com/api/search?key=29f2a594050bcf25be3fd8071f18924d&q=chicken%20breast&page=2";
@@ -75,7 +74,6 @@
                                   }];
      
                                   }];
-    
     [task resume];
 }
 
