@@ -176,6 +176,7 @@
                     <navigationItem key="navigationItem" id="afC-DP-uri"/>
                     <connections>
                         <outlet property="backgroundview" destination="uWk-rD-OE1" id="0VI-J6-aK2"/>
+                        <outlet property="foodCollectionVC" destination="Wdd-wY-SbG" id="QRk-6h-ka3"/>
                         <outlet property="textDisplayView" destination="D6M-HK-1Ad" id="CXH-Hv-TMM"/>
                     </connections>
                 </viewController>

@@ -1,18 +1,18 @@
 //
-//  DetailedViewController.m
+//  DetailViewController.m
 //  Taste
 //
-//  Created by Omar Tehsin on 2019-01-30.
+//  Created by David on 2019-01-30.
 //  Copyright © 2019 Omar Tehsin. All rights reserved.
 //
 
-#import "DetailedViewController.h"
+#import "DetailViewController.h"
 
-@interface DetailedViewController ()
+@interface DetailViewController ()
 
 @end
 
-@implementation DetailedViewController
+@implementation DetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
