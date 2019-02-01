@@ -30,6 +30,7 @@
 //@property (nonatomic, strong) ColourAnimator *colourAnimator;
 @property (weak, nonatomic) IBOutlet UIView *backgroundview;
 @property (weak, nonatomic) IBOutlet UIView *textDisplayView;
+@property (nonatomic) BOOL isInTransit;
 
 @end
 
@@ -38,9 +39,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self animateBackgroundColour];
+    //[self performBackgroundFade];
     self.foodCollectionVC.dataSource = self;
     self.foodCollectionVC.delegate = self;
    [self fetchData];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    self.isInTransit = true;
 }
 
 
@@ -101,12 +107,9 @@
 
 -(void) animateBackgroundColour {
     ColourAnimator *colourAnimator = [[ColourAnimator alloc]init];
-    [UIView animateWithDuration:2.5 animations:^{
         self.foodCollectionVC.backgroundColor = [colourAnimator colourGenerator];
         self.backgroundview.backgroundColor = [colourAnimator colourGenerator];
         self.textDisplayView.backgroundColor = [colourAnimator colourGenerator];
-    } completion:NULL];
-    
 }
 
 
@@ -128,6 +131,30 @@
 
 }
 
+-(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (event.type == UIEventSubtypeMotionShake) {
+        if (self.isInTransit) {
+            self.isInTransit = false;
+            [self performSegueWithIdentifier:@"shakeToDetail" sender:self];
+        }
+    }
+}
 
+-(void)performBackgroundFade {
+    if (self.backgroundview.alpha == 0.4) {
+        [UIView animateWithDuration:1 animations:^{
+            self.backgroundview.alpha = 1.0;
+        } completion:^(BOOL finished) {
+            [self performBackgroundFade];
+        }];
+    }
+    else if (self.backgroundview.alpha == 1.0) {
+        [UIView animateWithDuration:1 animations:^{
+            self.backgroundview.alpha = 0.3;
+        } completion:^(BOOL finished) {
+            [self performBackgroundFade];
+        }];
+    }
+}
 
 @end
