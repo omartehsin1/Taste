@@ -15,13 +15,10 @@
 #import "DetailViewController.h"
 #import "FoodSearch.h"
 
-
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate>
-
 @property (weak, nonatomic) IBOutlet UICollectionView* foodCollectionVC;
 @property (nonatomic) NSArray<Recipe*> * recepiesData;
 @property (weak, nonatomic) IBOutlet UITextField *textTyped;
-
 @property (nonatomic) NSMutableArray* recepiesArray;
 @property (nonatomic) NSString* search;
 @property (nonatomic) NSString* displayText;
@@ -29,7 +26,6 @@
 @property (nonatomic) NSArray *searchResults;
 @property (weak, nonatomic) IBOutlet UIView *backgroundview;
 @property (weak, nonatomic) IBOutlet UIView *textDisplayView;
-
 @end
 
 @implementation ViewController
@@ -44,6 +40,19 @@
     }
    [self fetchData];
 }
+-(IBAction)buttons:(UIButton*)sender{
+    if (sender.tag == 0){
+        self.textTyped.text = @"tacos";
+    } else if (sender.tag == 1) {
+        self.textTyped.text = @"sushi";
+    } else if (sender.tag == 2) {
+        self.textTyped.text = @"pasta";
+    } else if (sender.tag == 3) {
+        self.textTyped.text = @"spanish";
+    }
+    [self fetchData];
+    [self.foodCollectionVC reloadData];
+}
 -(void)fetchData{
     if (self.search == nil) {
         self.search = @"beef";
@@ -52,9 +61,7 @@
         self.search = [self.textTyped.text stringByReplacingOccurrencesOfString:@" " withString:@","];
     }
     NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=0110ce5d72cbc701edcd6047d4eb8f00&q=%@&page=1", self.search];
-    //NSString *inPutUrl = @"https://www.food2fork.com/api/search?key=29f2a594050bcf25be3fd8071f18924d&q=chicken%20breast&page=2";
     NSURL *url = [NSURL URLWithString:inPutUrl];
-    //NSURL* url = [NSURL URLWithString:[inPutUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]]];
     NSURLRequest* request = [NSURLRequest requestWithURL: url];
     NSURLSessionTask* task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^
                               (NSData * _Nullable data,
@@ -106,7 +113,6 @@
     } completion:NULL];
     
 }
-
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     //self.search = [str stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
