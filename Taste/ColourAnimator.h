@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ColourAnimator : NSObject
 @property (strong, nonatomic) NSArray *colourWheel;
 @property (strong, nonatomic) UIColor *colourChooser;
--(UIColor*)colourGenerator;
+-(void)colourGenerator;
 
 
 @end

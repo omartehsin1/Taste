@@ -28,6 +28,11 @@
 @property (weak, nonatomic) IBOutlet UIView *backgroundview;
 @property (weak, nonatomic) IBOutlet UIView *textDisplayView;
 @property (nonatomic) BOOL isInTransit;
+@property (weak, nonatomic) IBOutlet UILabel *ingredientLabelOne;
+@property (weak, nonatomic) IBOutlet UILabel *ingredientLabelTwo;
+@property (weak, nonatomic) IBOutlet UILabel *ingredientLabelThree;
+@property (weak, nonatomic) IBOutlet UILabel *ingredientLabelFour;
+@property (nonatomic, strong) NSArray<NSString *> *arrayData;
 
 @end
 
@@ -35,15 +40,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self animateBackgroundColour];
-    //[self performBackgroundFade];
+    self.foodCollectionVC.backgroundColor = [UIColor clearColor];
     self.categoryView.layer.cornerRadius = 15;
     self.categoryView.layer.masksToBounds = true;
     self.foodCollectionVC.dataSource = self;
     self.foodCollectionVC.delegate = self;
-    
 
    [self fetchData];
+    self.arrayData = [[NSMutableArray alloc]init];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateLabelFromTextField:)
+                                                 name:UITextFieldTextDidChangeNotification
+                                               object:nil];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -71,7 +80,7 @@
     else if (self.search != nil ) {
         self.search = [self.textTyped.text stringByReplacingOccurrencesOfString:@" " withString:@","];
     }
-    NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=d88efc1cbe97eb8c74f8823dc953eeba&q=%@&page=1", self.search];
+    NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=29f2a594050bcf25be3fd8071f18924d&q=%@&page=1", self.search];
     NSURL *url = [NSURL URLWithString:inPutUrl];
     NSURLRequest* request = [NSURLRequest requestWithURL: url];
     NSURLSessionTask* task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^
@@ -116,18 +125,49 @@
 
 
 //-(void) animateBackgroundColour {
-//    ColourAnimator *colourAnimator = [[ColourAnimator alloc]init];
-//        self.foodCollectionVC.backgroundColor = [colourAnimator colourGenerator];
-//        self.backgroundview.backgroundColor = [colourAnimator colourGenerator];
-//        self.textDisplayView.backgroundColor = [colourAnimator colourGenerator];
+//    static NSInteger i = 0;
+//    NSArray *colours = [NSArray arrayWithObjects:[UIColor colorWithRed:(240.0/255.0) green:(171.0/255.0) blue:(141.0/255.0) alpha:1.0], [UIColor colorWithRed:(89/255.0) green:(47.0/255.0) blue:(88.0/255.0) alpha:1.0], [UIColor colorWithRed:(235.0/255.0) green:(38.0/255.0) blue:(50.0/255.0) alpha:1.0], nil];
+//    if (i >= [colours count]) {
+//        i = 0;
+//    }
+//    [UIView animateWithDuration:2.0 animations:^{
+//        self.backgroundview.backgroundColor = [colours objectAtIndex:i];
+//    } completion:^(BOOL finished) {
+//        i++;
+//    }];
+//
 //}
+
+
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     //self.search = [str stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
     [self fetchData];
     [self.foodCollectionVC reloadData];
     [self.view endEditing:YES];
+    
     return true;
+}
+
+
+- (void)updateLabelFromTextField:(NSNotification *)notification{
+    
+    
+    
+    
+    if (notification.object == self.textTyped){
+        self.textTyped = (UITextField *) notification.object;
+        self.arrayData = [self.textTyped.text componentsSeparatedByString:@" "];
+
+        
+        NSArray<UILabel*>* labels = @[self.ingredientLabelOne, self.ingredientLabelTwo,
+                                      self.ingredientLabelThree, self.ingredientLabelFour];
+        
+        [self.arrayData enumerateObjectsUsingBlock:^(NSString * word, NSUInteger idx, BOOL * _Nonnull stop) {
+            labels[idx].text = word;
+        }];
+
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -140,30 +180,14 @@
 
 }
 
--(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
-    if (event.type == UIEventSubtypeMotionShake) {
-        if (self.isInTransit) {
-            self.isInTransit = false;
-            [self performSegueWithIdentifier:@"cellToDetail" sender:self];
-        }
-    }
-}
-
-//-(void)performBackgroundFade {
-//    if (self.backgroundview.alpha == 0.4) {
-//        [UIView animateWithDuration:1 animations:^{
-//            self.backgroundview.alpha = 1.0;
-//        } completion:^(BOOL finished) {
-//            [self performBackgroundFade];
-//        }];
-//    }
-//    else if (self.backgroundview.alpha == 1.0) {
-//        [UIView animateWithDuration:1 animations:^{
-//            self.backgroundview.alpha = 0.3;
-//        } completion:^(BOOL finished) {
-//            [self performBackgroundFade];
-//        }];
+//-(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+//    if (event.type == UIEventSubtypeMotionShake) {
+//        if (self.isInTransit) {
+//            self.isInTransit = false;
+//            [self performSegueWithIdentifier:@"cellToDetail" sender:self];
+//        }
 //    }
 //}
+
 
 @end
