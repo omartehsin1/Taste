@@ -10,17 +10,13 @@
 
 @implementation Recipe
 
-- (instancetype)initWithJsonDictionary:(NSDictionary*)key;
+- (instancetype)initWithJsonDictionary:(NSDictionary*)key
 {
     self = [super init];
     if (self) {
         self.label = key[@"title"];
         self.imageURl = key[@"image_url"];
         self.url = key[@"source_url"];
-        //self.shareAs = key[@"shareAs"];
-        //self.yield = [key[@"yeild"] integerValue];
-        //self.ingredientLines = key[@"ingredientLines"];
-        //self.calories = [key[@"calories"] floatValue];
     }
     return self;
 }

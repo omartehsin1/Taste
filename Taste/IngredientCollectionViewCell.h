@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Ingredient.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface IngredientCollectionViewCell : UICollectionViewCell
+@property (nonatomic) Ingredient* ingredient;
 
 @end
 

@@ -9,5 +9,19 @@
 #import "Ingredient.h"
 
 @implementation Ingredient
+-(instancetype)initWithDictionary:(NSDictionary*)key
+{
+    self = [super init];
+    if (self) {
+        self.text = key[@"text"];
+        self.image = key[@"emoji"];
+    }
+    return self;
+}
+
+-(void)addProperties{
+    
+}
+
 
 @end

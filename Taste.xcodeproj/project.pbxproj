@@ -20,6 +20,7 @@
 		07EDDA8B22027AC6002CB951 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EDDA8422027AC6002CB951 /* Recipe.m */; };
 		07EDDA8C22027AC6002CB951 /* IngredientCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EDDA8622027AC6002CB951 /* IngredientCollectionViewCell.m */; };
 		634C803A2203C95E0044A6DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 634C80392203C95E0044A6DF /* Main.storyboard */; };
+		634C80402204CC0A0044A6DF /* IngredientsData.m in Sources */ = {isa = PBXBuildFile; fileRef = 634C803F2204CC0A0044A6DF /* IngredientsData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		07EDDA8622027AC6002CB951 /* IngredientCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientCollectionViewCell.m; sourceTree = "<group>"; };
 		07EDDA8722027AC6002CB951 /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
 		634C80392203C95E0044A6DF /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		634C803E2204CC0A0044A6DF /* IngredientsData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IngredientsData.h; sourceTree = "<group>"; };
+		634C803F2204CC0A0044A6DF /* IngredientsData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IngredientsData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 				07EDDA6D22024FFB002CB951 /* ColourAnimator.m */,
 				07EDDA8022027AC5002CB951 /* DetailViewController.h */,
 				07EDDA8322027AC6002CB951 /* DetailViewController.m */,
+				634C803E2204CC0A0044A6DF /* IngredientsData.h */,
+				634C803F2204CC0A0044A6DF /* IngredientsData.m */,
 				07EDDA8222027AC5002CB951 /* Ingredient.h */,
 				07EDDA7F22027AC5002CB951 /* Ingredient.m */,
 				07EDDA8522027AC6002CB951 /* IngredientCollectionViewCell.h */,
@@ -184,6 +189,7 @@
 				07EDDA6E22024FFB002CB951 /* ColourAnimator.m in Sources */,
 				07EDDA8822027AC6002CB951 /* Ingredient.m in Sources */,
 				07EDDA8C22027AC6002CB951 /* IngredientCollectionViewCell.m in Sources */,
+				634C80402204CC0A0044A6DF /* IngredientsData.m in Sources */,
 				07EDDA6B22023777002CB951 /* FoodSearch.m in Sources */,
 				07EDDA8A22027AC6002CB951 /* DetailViewController.m in Sources */,
 			);

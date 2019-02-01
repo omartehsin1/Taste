@@ -14,14 +14,18 @@
 #import "IngredientCollectionViewCell.h"
 #import "DetailViewController.h"
 #import "FoodSearch.h"
+#import "IngredientsData.h"
 
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView* foodCollectionVC;
+@property (weak, nonatomic) IBOutlet UICollectionView* ingredientsCollectionVC;
 @property (nonatomic) NSArray<Recipe*> * recepiesData;
 @property (weak, nonatomic) IBOutlet UITextField *textTyped;
 @property (nonatomic) NSMutableArray* recepiesArray;
 @property (weak, nonatomic) IBOutlet UIView *categoryView;
+@property (nonatomic) NSMutableArray* ingredientsArray;
 @property (nonatomic) NSString* search;
+@property (nonatomic) IngredientsData* inData;
 @property (nonatomic) NSString* displayText;
 @property (nonatomic) NSArray *recipes;
 @property (nonatomic) NSArray *searchResults;
@@ -35,14 +39,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.inData = [[IngredientsData alloc]init];
+    [self ingredientDataformatter];
     //[self animateBackgroundColour];
     //[self performBackgroundFade];
     self.categoryView.layer.cornerRadius = 15;
     self.categoryView.layer.masksToBounds = true;
+    
     self.foodCollectionVC.dataSource = self;
     self.foodCollectionVC.delegate = self;
+    self.ingredientsCollectionVC.dataSource = self;
+    self.ingredientsCollectionVC.delegate = self;
     
-
    [self fetchData];
 }
 
@@ -96,6 +104,14 @@
     [task resume];
 }
 
+-(void)ingredientDataformatter{
+    self.ingredientsArray = [[NSMutableArray alloc]init];
+    for (NSDictionary* ingredientsDictionary in self.inData.data) {
+        Ingredient *theIngredient = [[Ingredient alloc]initWithDictionary:ingredientsDictionary];
+        [self.ingredientsArray addObject:theIngredient];
+    }
+}
+
 
 #pragma mark - Collection View Delegate
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
@@ -104,16 +120,16 @@
     cell.recipe = self.recepiesData[indexPath.item];
     [cell.recipe loadImage];
     
+    IngredientCollectionViewCell* inCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ingredientCell" forIndexPath:indexPath];
+    inCell.tag = indexPath.item;
+    inCell.ingredient = self.ingredientsArray[indexPath.item];
+    [inCell.ingredient addProperties];
     return cell;
 }
-
-
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.recepiesData.count;
 }
-
-
 
 //-(void) animateBackgroundColour {
 //    ColourAnimator *colourAnimator = [[ColourAnimator alloc]init];

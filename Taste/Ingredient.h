@@ -7,11 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Ingredient : NSObject
-
+@property (nonatomic) NSString* image;
+@property (nonatomic) NSString* text;
+-(instancetype)initWithDictionary:(NSDictionary*)key;
+-(void)addProperties;
 @end
 
 NS_ASSUME_NONNULL_END
