@@ -24,7 +24,7 @@
     self.foodImage.layer.masksToBounds = true;
     self.foodImage.layer.borderWidth = 1.5;
     self.foodImage.layer.borderColor = [UIColor blueColor].CGColor;
-    self.foodImage.layer.cornerRadius = self.foodImage.bounds.size.width/2;
+    self.foodImage.layer.cornerRadius = self.foodImage.bounds.size.width/3;
     
     [self addObserver:self forKeyPath:@"self.recipe.image" options:(NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew) context:nil];
 }
