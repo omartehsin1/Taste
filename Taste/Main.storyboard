@@ -145,7 +145,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="373" id="Sfw-JP-kMo"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rVP-5n-TTH">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rVP-5n-TTH">
                                     <size key="itemSize" width="147" height="164"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -211,6 +211,7 @@
                     <navigationItem key="navigationItem" id="afC-DP-uri"/>
                     <connections>
                         <outlet property="backgroundview" destination="uWk-rD-OE1" id="0VI-J6-aK2"/>
+                        <outlet property="categoryView" destination="ake-Xp-eM8" id="O5x-cM-L4p"/>
                         <outlet property="foodCollectionVC" destination="Wdd-wY-SbG" id="QRk-6h-ka3"/>
                         <outlet property="textDisplayView" destination="D6M-HK-1Ad" id="CXH-Hv-TMM"/>
                         <outlet property="textTyped" destination="hM7-lb-9JW" id="Ohq-uN-mSe"/>

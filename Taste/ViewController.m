@@ -20,6 +20,7 @@
 @property (nonatomic) NSArray<Recipe*> * recepiesData;
 @property (weak, nonatomic) IBOutlet UITextField *textTyped;
 @property (nonatomic) NSMutableArray* recepiesArray;
+@property (weak, nonatomic) IBOutlet UIView *categoryView;
 @property (nonatomic) NSString* search;
 @property (nonatomic) NSString* displayText;
 @property (nonatomic) NSArray *recipes;
@@ -34,13 +35,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self animateBackgroundColour];
+    //[self animateBackgroundColour];
     //[self performBackgroundFade];
+    self.categoryView.layer.cornerRadius = 15;
+    self.categoryView.layer.masksToBounds = true;
     self.foodCollectionVC.dataSource = self;
     self.foodCollectionVC.delegate = self;
-    if (self.search == nil) {
-        self.search = @"chicken";
-    }
+    
+
    [self fetchData];
 }
 
@@ -69,7 +71,7 @@
     else if (self.search != nil ) {
         self.search = [self.textTyped.text stringByReplacingOccurrencesOfString:@" " withString:@","];
     }
-    NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=0110ce5d72cbc701edcd6047d4eb8f00&q=%@&page=1", self.search];
+    NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=d88efc1cbe97eb8c74f8823dc953eeba&q=%@&page=1", self.search];
     NSURL *url = [NSURL URLWithString:inPutUrl];
     NSURLRequest* request = [NSURLRequest requestWithURL: url];
     NSURLSessionTask* task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^
@@ -113,12 +115,12 @@
 
 
 
--(void) animateBackgroundColour {
-    ColourAnimator *colourAnimator = [[ColourAnimator alloc]init];
-        self.foodCollectionVC.backgroundColor = [colourAnimator colourGenerator];
-        self.backgroundview.backgroundColor = [colourAnimator colourGenerator];
-        self.textDisplayView.backgroundColor = [colourAnimator colourGenerator];
-}
+//-(void) animateBackgroundColour {
+//    ColourAnimator *colourAnimator = [[ColourAnimator alloc]init];
+//        self.foodCollectionVC.backgroundColor = [colourAnimator colourGenerator];
+//        self.backgroundview.backgroundColor = [colourAnimator colourGenerator];
+//        self.textDisplayView.backgroundColor = [colourAnimator colourGenerator];
+//}
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     //self.search = [str stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
@@ -142,26 +144,26 @@
     if (event.type == UIEventSubtypeMotionShake) {
         if (self.isInTransit) {
             self.isInTransit = false;
-            [self performSegueWithIdentifier:@"shakeToDetail" sender:self];
+            [self performSegueWithIdentifier:@"cellToDetail" sender:self];
         }
     }
 }
 
--(void)performBackgroundFade {
-    if (self.backgroundview.alpha == 0.4) {
-        [UIView animateWithDuration:1 animations:^{
-            self.backgroundview.alpha = 1.0;
-        } completion:^(BOOL finished) {
-            [self performBackgroundFade];
-        }];
-    }
-    else if (self.backgroundview.alpha == 1.0) {
-        [UIView animateWithDuration:1 animations:^{
-            self.backgroundview.alpha = 0.3;
-        } completion:^(BOOL finished) {
-            [self performBackgroundFade];
-        }];
-    }
-}
+//-(void)performBackgroundFade {
+//    if (self.backgroundview.alpha == 0.4) {
+//        [UIView animateWithDuration:1 animations:^{
+//            self.backgroundview.alpha = 1.0;
+//        } completion:^(BOOL finished) {
+//            [self performBackgroundFade];
+//        }];
+//    }
+//    else if (self.backgroundview.alpha == 1.0) {
+//        [UIView animateWithDuration:1 animations:^{
+//            self.backgroundview.alpha = 0.3;
+//        } completion:^(BOOL finished) {
+//            [self performBackgroundFade];
+//        }];
+//    }
+//}
 
 @end

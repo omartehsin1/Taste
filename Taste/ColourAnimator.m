@@ -20,7 +20,6 @@
     
     NSArray *colourWheel = @[red, orange, yellow];
     
-    
     for (UIColor *colour in colourWheel) {
         self.colourChooser = colour;
     }
