@@ -14,14 +14,18 @@
 #import "IngredientCollectionViewCell.h"
 #import "DetailViewController.h"
 #import "FoodSearch.h"
+#import "IngredientsData.h"
 
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView* foodCollectionVC;
+@property (weak, nonatomic) IBOutlet UICollectionView* ingredientsCollectionVC;
 @property (nonatomic) NSArray<Recipe*> * recepiesData;
 @property (weak, nonatomic) IBOutlet UITextField *textTyped;
 @property (nonatomic) NSMutableArray* recepiesArray;
-@property (weak, nonatomic) IBOutlet UIView *categoryView;
+//@property (weak, nonatomic) IBOutlet UIView *categoryView;
+@property (nonatomic) NSMutableArray* ingredientsArray;
 @property (nonatomic) NSString* search;
+@property (nonatomic) IngredientsData* inData;
 @property (nonatomic) NSString* displayText;
 @property (nonatomic) NSArray *recipes;
 @property (nonatomic) NSArray *searchResults;
@@ -40,12 +44,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.inData = [[IngredientsData alloc]init];
+    [self ingredientDataformatter];
+    //[self animateBackgroundColour];
+    //[self performBackgroundFade];
     self.foodCollectionVC.backgroundColor = [UIColor clearColor];
-    self.categoryView.layer.cornerRadius = 15;
-    self.categoryView.layer.masksToBounds = true;
+//    self.categoryView.layer.cornerRadius = 15;
+//    self.categoryView.layer.masksToBounds = true;
+    
     self.foodCollectionVC.dataSource = self;
     self.foodCollectionVC.delegate = self;
-
+    self.ingredientsCollectionVC.dataSource = self;
+    self.ingredientsCollectionVC.delegate = self;
+    
    [self fetchData];
     self.arrayData = [[NSMutableArray alloc]init];
 
@@ -55,19 +66,8 @@
                                                object:nil];
 }
 
-
--(IBAction)buttons:(UIButton*)sender{
-    if (sender.tag == 0){
-        self.textTyped.text = @"tacos";
-    } else if (sender.tag == 1) {
-        self.textTyped.text = @"sushi";
-    } else if (sender.tag == 2) {
-        self.textTyped.text = @"pasta";
-    } else if (sender.tag == 3) {
-        self.textTyped.text = @"spanish";
-    }
-    [self fetchData];
-    [self.foodCollectionVC reloadData];
+-(void)viewDidAppear:(BOOL)animated {
+    self.isInTransit = true;
 }
 
 -(void)fetchData{
@@ -77,7 +77,8 @@
     else if (self.search != nil ) {
         self.search = [self.textTyped.text stringByReplacingOccurrencesOfString:@" " withString:@","];
     }
-    NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=3c58b6311ac0bf81c8cb97ebcb3be5ee&q=%@&page=1", self.search];
+    //c789f525b805ab2555e68d38f5096b6f
+    NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=1aae8d12cab0f476475ea76b9b4cb637&q=%@&page=1", self.search];
     NSURL *url = [NSURL URLWithString:inPutUrl];
     NSURLRequest* request = [NSURLRequest requestWithURL: url];
     NSURLSessionTask* task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^
@@ -102,24 +103,37 @@
     [task resume];
 }
 
+-(void)ingredientDataformatter{
+    self.ingredientsArray = [[NSMutableArray alloc]init];
+    for (NSDictionary* ingredientsDictionary in self.inData.data) {
+        Ingredient *theIngredient = [[Ingredient alloc]initWithDictionary:ingredientsDictionary];
+        [self.ingredientsArray addObject:theIngredient];
+    }
+}
 
 #pragma mark - Collection View Delegate
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    RecipeCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"recipeCell" forIndexPath:indexPath];
-    cell.tag = indexPath.item;
-    cell.recipe = self.recepiesData[indexPath.item];
-    [cell.recipe loadImage];
-    
-    return cell;
+    if (collectionView == self.foodCollectionVC) {
+        RecipeCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"recipeCell" forIndexPath:indexPath];
+        cell.tag = indexPath.item;
+        cell.recipe = self.recepiesData[indexPath.item];
+        [cell.recipe loadImage];
+        return cell;
+    } else {
+        IngredientCollectionViewCell* inCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ingredientCell" forIndexPath:indexPath];
+        inCell.tag = indexPath.item;
+        inCell.ingredient = self.ingredientsArray[indexPath.item];
+        self.search = inCell.ingredient.text;
+        return inCell;
+    }
 }
-
-
-
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.recepiesData.count;
+    if (collectionView == self.foodCollectionVC){
+        return self.recepiesData.count;
+    } else {
+        return self.ingredientsArray.count;
+    }
 }
-
-
 
 //-(void) animateBackgroundColour {
 //    static NSInteger i = 0;
@@ -135,8 +149,6 @@
 //
 //}
 
-
-
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     //self.search = [str stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
     [self fetchData];
@@ -145,7 +157,6 @@
     
     return true;
 }
-
 
 - (void)updateLabelFromTextField:(NSNotification *)notification{
  
@@ -158,7 +169,6 @@
         [self.arrayData enumerateObjectsUsingBlock:^(NSString * word, NSUInteger idx, BOOL * _Nonnull stop) {
             labels[idx].text = word;
         }];
-
     }
 }
 
@@ -184,7 +194,23 @@
             NSLog(@"shook!");
             self.isInTransit = false;
         }
+
+}
+
+//-(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+//    if (event.type == UIEventSubtypeMotionShake) {
+//        if (self.isInTransit) {
+//            self.isInTransit = false;
+//            [self performSegueWithIdentifier:@"cellToDetail" sender:self];
+//        }
+//    }
+//}
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if(collectionView == self.ingredientsCollectionVC){
+        self.search = @"chicken";
+        [self fetchData];
     }
+    
 }
 
 

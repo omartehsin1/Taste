@@ -8,6 +8,17 @@
 
 #import "IngredientCollectionViewCell.h"
 
+@interface IngredientCollectionViewCell ()
+@property (weak, nonatomic) IBOutlet UILabel* textLabel;
+@property (weak, nonatomic) IBOutlet UILabel* emojiLabel;
+
+@end
+
 @implementation IngredientCollectionViewCell
+
+- (void)setIngredient:(Ingredient *)ingredient{
+    self.textLabel.text = ingredient.text;
+    self.emojiLabel.text = ingredient.image;
+}
 
 @end
