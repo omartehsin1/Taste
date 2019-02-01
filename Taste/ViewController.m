@@ -55,9 +55,7 @@
                                                object:nil];
 }
 
--(void)viewDidAppear:(BOOL)animated {
-    self.isInTransit = true;
-}
+
 -(IBAction)buttons:(UIButton*)sender{
     if (sender.tag == 0){
         self.textTyped.text = @"tacos";
@@ -72,7 +70,6 @@
     [self.foodCollectionVC reloadData];
 }
 
-
 -(void)fetchData{
     if (self.search == nil) {
         self.search = @"beef";
@@ -80,7 +77,7 @@
     else if (self.search != nil ) {
         self.search = [self.textTyped.text stringByReplacingOccurrencesOfString:@" " withString:@","];
     }
-    NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=29f2a594050bcf25be3fd8071f18924d&q=%@&page=1", self.search];
+    NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=3c58b6311ac0bf81c8cb97ebcb3be5ee&q=%@&page=1", self.search];
     NSURL *url = [NSURL URLWithString:inPutUrl];
     NSURLRequest* request = [NSURLRequest requestWithURL: url];
     NSURLSessionTask* task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^
@@ -151,18 +148,13 @@
 
 
 - (void)updateLabelFromTextField:(NSNotification *)notification{
-    
-    
-    
-    
+ 
     if (notification.object == self.textTyped){
         self.textTyped = (UITextField *) notification.object;
         self.arrayData = [self.textTyped.text componentsSeparatedByString:@" "];
 
-        
         NSArray<UILabel*>* labels = @[self.ingredientLabelOne, self.ingredientLabelTwo,
                                       self.ingredientLabelThree, self.ingredientLabelFour];
-        
         [self.arrayData enumerateObjectsUsingBlock:^(NSString * word, NSUInteger idx, BOOL * _Nonnull stop) {
             labels[idx].text = word;
         }];
@@ -177,17 +169,23 @@
         Recipe* recipeFromCell = recipeToSendCell.recipe;
         dvc.recipeInfo = recipeFromCell;
     }
-
 }
 
-//-(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
-//    if (event.type == UIEventSubtypeMotionShake) {
-//        if (self.isInTransit) {
-//            self.isInTransit = false;
-//            [self performSegueWithIdentifier:@"cellToDetail" sender:self];
-//        }
-//    }
-//}
+
+-(void)viewDidAppear:(BOOL)animated {
+    self.isInTransit = true;
+}
+-(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (event.type == UIEventSubtypeMotionShake) {
+        if (self.isInTransit) {
+            int randIdx = arc4random_uniform([self.foodCollectionVC numberOfItemsInSection:0]);
+            UICollectionViewCell *cell = [self.foodCollectionVC cellForItemAtIndexPath:[NSIndexPath indexPathForItem:randIdx inSection:0]];
+            [self performSegueWithIdentifier:@"cellToDetail" sender:cell];
+            NSLog(@"shook!");
+            self.isInTransit = false;
+        }
+    }
+}
 
 
 @end

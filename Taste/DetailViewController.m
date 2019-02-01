@@ -25,13 +25,7 @@
     NSURL* url = [NSURL URLWithString:recipeUrl];
     NSURLRequest* request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];
-   
-    
-    
-   
-    
-    
+ 
 }
-
 
 @end
