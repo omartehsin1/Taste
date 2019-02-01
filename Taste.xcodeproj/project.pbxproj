@@ -19,7 +19,7 @@
 		07EDDA8A22027AC6002CB951 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EDDA8322027AC6002CB951 /* DetailViewController.m */; };
 		07EDDA8B22027AC6002CB951 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EDDA8422027AC6002CB951 /* Recipe.m */; };
 		07EDDA8C22027AC6002CB951 /* IngredientCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EDDA8622027AC6002CB951 /* IngredientCollectionViewCell.m */; };
-		07EDDA8E22027B82002CB951 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07EDDA8D22027B82002CB951 /* Main.storyboard */; };
+		634C803A2203C95E0044A6DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 634C80392203C95E0044A6DF /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +46,7 @@
 		07EDDA8522027AC6002CB951 /* IngredientCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientCollectionViewCell.h; sourceTree = "<group>"; };
 		07EDDA8622027AC6002CB951 /* IngredientCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientCollectionViewCell.m; sourceTree = "<group>"; };
 		07EDDA8722027AC6002CB951 /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
-		07EDDA8D22027B82002CB951 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		634C80392203C95E0044A6DF /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +79,13 @@
 		07EDDA4F2202179A002CB951 /* Taste */ = {
 			isa = PBXGroup;
 			children = (
+				634C80392203C95E0044A6DF /* Main.storyboard */,
 				07EDDA502202179A002CB951 /* AppDelegate.h */,
 				07EDDA512202179A002CB951 /* AppDelegate.m */,
 				07EDDA532202179A002CB951 /* ViewController.h */,
 				07EDDA542202179A002CB951 /* ViewController.m */,
 				07EDDA6C22024FFB002CB951 /* ColourAnimator.h */,
 				07EDDA6D22024FFB002CB951 /* ColourAnimator.m */,
-				07EDDA562202179A002CB951 /* Main.storyboard */,
 				07EDDA8022027AC5002CB951 /* DetailViewController.h */,
 				07EDDA8322027AC6002CB951 /* DetailViewController.m */,
 				07EDDA8222027AC5002CB951 /* Ingredient.h */,
@@ -98,7 +98,6 @@
 				07EDDA8122027AC5002CB951 /* RecipeCollectionViewCell.m */,
 				07EDDA6922023777002CB951 /* FoodSearch.h */,
 				07EDDA6A22023777002CB951 /* FoodSearch.m */,
-				07EDDA8D22027B82002CB951 /* Main.storyboard */,
 				07EDDA592202179C002CB951 /* Assets.xcassets */,
 				07EDDA5B2202179C002CB951 /* LaunchScreen.storyboard */,
 				07EDDA5E2202179C002CB951 /* Info.plist */,
@@ -164,9 +163,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07EDDA8E22027B82002CB951 /* Main.storyboard in Resources */,
 				07EDDA5D2202179C002CB951 /* LaunchScreen.storyboard in Resources */,
 				07EDDA5A2202179C002CB951 /* Assets.xcassets in Resources */,
+				634C803A2203C95E0044A6DF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
