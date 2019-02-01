@@ -121,22 +121,61 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="92" id="HUP-7o-lZ5"/>
                                         </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aT7-GJ-rYC">
-                                            <size key="itemSize" width="50" height="50"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aT7-GJ-rYC">
+                                            <size key="itemSize" width="105" height="92"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ingredientCell" id="Kwy-J5-ehr">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ingredientCell" id="Kwy-J5-ehr" customClass="IngredientCollectionViewCell">
+                                                <rect key="frame" x="0.0" y="0.0" width="105" height="92"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="105" height="92"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVH-JP-I0z">
+                                                            <rect key="frame" x="0.0" y="72" width="105" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="aO7-IL-mbK"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🍗" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMh-5D-2XJ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="105" height="72"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="105" id="Vsr-c0-laS"/>
+                                                                <constraint firstAttribute="height" constant="72" id="tUx-q3-q3k"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                 </view>
+                                                <color key="backgroundColor" red="0.29825385329999998" green="0.20032768810000001" blue="0.99181075510000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="nVH-JP-I0z" firstAttribute="top" secondItem="iMh-5D-2XJ" secondAttribute="bottom" id="0H2-TJ-DqX"/>
+                                                    <constraint firstAttribute="trailing" secondItem="iMh-5D-2XJ" secondAttribute="trailing" id="30j-fg-csh"/>
+                                                    <constraint firstAttribute="trailing" secondItem="nVH-JP-I0z" secondAttribute="trailing" id="31T-FY-ddg"/>
+                                                    <constraint firstItem="iMh-5D-2XJ" firstAttribute="top" secondItem="Kwy-J5-ehr" secondAttribute="top" id="74U-lP-DfC"/>
+                                                    <constraint firstItem="nVH-JP-I0z" firstAttribute="leading" secondItem="Kwy-J5-ehr" secondAttribute="leading" id="qzH-v8-pnj"/>
+                                                    <constraint firstAttribute="bottom" secondItem="nVH-JP-I0z" secondAttribute="bottom" id="wi8-tX-Rdt"/>
+                                                    <constraint firstItem="iMh-5D-2XJ" firstAttribute="leading" secondItem="Kwy-J5-ehr" secondAttribute="leading" id="x4S-Cx-Cvq"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="emojiLabel" destination="iMh-5D-2XJ" id="63r-sS-MfH"/>
+                                                    <outlet property="textLabel" destination="nVH-JP-I0z" id="1vS-BI-H3E"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="XsR-Vs-cEz"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="5ZE-H0-0dA"/>
+                                        </connections>
                                     </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.69019607843137254" blue="0.58823529411764708" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -174,6 +213,7 @@
                         <outlet property="ingredientLabelOne" destination="fTb-Aw-0yP" id="IYf-Zj-Ej6"/>
                         <outlet property="ingredientLabelThree" destination="oEW-xh-fJ9" id="Yr1-u6-d4y"/>
                         <outlet property="ingredientLabelTwo" destination="5eu-4N-rE4" id="IME-lf-ces"/>
+                        <outlet property="ingredientsCollectionVC" destination="gtC-g5-Y0W" id="ROJ-lm-1EL"/>
                         <outlet property="textDisplayView" destination="D6M-HK-1Ad" id="CXH-Hv-TMM"/>
                         <outlet property="textTyped" destination="hM7-lb-9JW" id="Ohq-uN-mSe"/>
                     </connections>

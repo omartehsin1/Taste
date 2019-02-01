@@ -14,14 +14,9 @@
     self = [super init];
     if (self) {
         self.text = key[@"text"];
-        self.image = key[@"emoji"];
+        self.image = key[@"image"];
     }
     return self;
 }
-
--(void)addProperties{
-    
-}
-
 
 @end

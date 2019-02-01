@@ -17,10 +17,14 @@
     self = [super init];
     if (self) {
         self.data = [[NSArray alloc]initWithObjects:
-                @{@"text":@"tacos",@"image":@"🌮"},
-                @{@"text":@"sishi",@"image":@"🍱"},
-                @{@"text":@"pasta",@"image":@"🍜"},
-                @{@"text":@"spanish",@"image":@"🍛"},
+                @{@"text":@"tacos",
+                  @"image":@"🌮"},
+                @{@"text":@"sishi",
+                  @"image":@"🍱"},
+                @{@"text":@"pasta",
+                  @"image":@"🍜"},
+                @{@"text":@"spanish",
+                  @"image":@"🍛"},
                 @{@"text":@"chicken",@"image":@"🍗"},
                 @{@"text":@"avocado",@"image":@"🥑"},
                 @{@"text":@"salad",@"image":@"🥗"},

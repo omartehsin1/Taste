@@ -15,7 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSString* image;
 @property (nonatomic) NSString* text;
 -(instancetype)initWithDictionary:(NSDictionary*)key;
--(void)addProperties;
 @end
 
 NS_ASSUME_NONNULL_END
