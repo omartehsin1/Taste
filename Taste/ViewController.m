@@ -69,9 +69,7 @@
                                              selector:@selector(updateLabelFromTextField:)
                                                  name:UITextFieldTextDidChangeNotification
                                                object:nil];
-    
-    [self addBackgroundBlur];
-    [self animatingImages];
+
 }
 
 -(void)viewDidAppear:(BOOL)animated {
