@@ -70,13 +70,8 @@
                                                  name:UITextFieldTextDidChangeNotification
                                                object:nil];
     
-    
     [self addBackgroundBlur];
     [self animatingImages];
-    
-    
-    
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -176,13 +171,10 @@
         return self.ingredientsArray.count;
     }
 }
-
-
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     [self fetchData];
     [self.foodCollectionVC reloadData];
     [self.view endEditing:YES];
-    
     return true;
 }
 
@@ -209,20 +201,20 @@
     }
 }
 
-
 //-(void)viewDidAppear:(BOOL)animated {
 //    self.isInTransit = true;
 //}
 -(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
     if (event.type == UIEventSubtypeMotionShake) {
         if (self.isInTransit) {
-            int randIdx = arc4random_uniform([self.foodCollectionVC numberOfItemsInSection:0]);
-            UICollectionViewCell *cell = [self.foodCollectionVC cellForItemAtIndexPath:[NSIndexPath indexPathForItem:randIdx inSection:0]];
-            [self performSegueWithIdentifier:@"cellToDetail" sender:cell];
+            int randIdx = arc4random_uniform(5);
+            NSLog(@"%i",randIdx);
+            RecipeCollectionViewCell *ascell = [self.foodCollectionVC cellForItemAtIndexPath:[NSIndexPath indexPathForItem:randIdx inSection:0]];
+            [self.foodCollectionVC reloadData];
+            [self performSegueWithIdentifier:@"cellToDetail" sender: ascell];
             NSLog(@"shook!");
             self.isInTransit = false;
         }
-
 }
 }
 //-(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
