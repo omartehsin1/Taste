@@ -16,6 +16,14 @@
 
 @implementation IngredientCollectionViewCell
 
+-(void)awakeFromNib {
+    [super awakeFromNib];
+    self.emojiLabel.layer.masksToBounds = true;
+    self.emojiLabel.layer.borderWidth = 1.0;
+    self.emojiLabel.layer.cornerRadius = self.emojiLabel.bounds.size.width/4;
+}
+
+
 - (void)setIngredient:(Ingredient *)ingredient{
     self.textLabel.text = ingredient.text;
     self.emojiLabel.text = ingredient.image;
