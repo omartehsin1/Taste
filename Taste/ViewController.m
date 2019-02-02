@@ -15,6 +15,8 @@
 #import "DetailViewController.h"
 #import "FoodSearch.h"
 #import "IngredientsData.h"
+#import "UIImage+Blur.h"
+
 
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView* foodCollectionVC;
@@ -37,6 +39,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *ingredientLabelThree;
 @property (weak, nonatomic) IBOutlet UILabel *ingredientLabelFour;
 @property (nonatomic, strong) NSArray<NSString *> *arrayData;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 
 @end
 
@@ -64,10 +67,39 @@
                                              selector:@selector(updateLabelFromTextField:)
                                                  name:UITextFieldTextDidChangeNotification
                                                object:nil];
+    
+    
+    [self addBackgroundBlur];
+    [self animatingImages];
+    
+    
+    
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     self.isInTransit = true;
+}
+
+-(void)animatingImages {
+    self.backgroundImageView.animationImages = [[NSArray alloc]initWithObjects:[UIImage imageNamed:@"burger.png"], [UIImage imageNamed:@"burger2.png"], [UIImage imageNamed:@"pasta.png"], [UIImage imageNamed:@"pizza.png"], nil];
+    self.backgroundImageView.animationRepeatCount = 1000;
+    self.backgroundImageView.animationDuration = 5;
+    [self.backgroundImageView startAnimating];
+}
+
+
+-(void)addBackgroundBlur {
+
+    UIVisualEffect *blurEffect;
+    blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleRegular];
+    UIVisualEffectView *visualEffectView;
+    visualEffectView = [[UIVisualEffectView alloc]initWithEffect:blurEffect];
+    visualEffectView.frame = self.backgroundImageView.bounds;
+    visualEffectView.alpha = 1.0f;
+    
+    [self.backgroundImageView addSubview:visualEffectView];
 }
 
 -(void)fetchData{
@@ -78,7 +110,7 @@
         self.search = [self.textTyped.text stringByReplacingOccurrencesOfString:@" " withString:@","];
     }
     //c789f525b805ab2555e68d38f5096b6f
-    NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=1aae8d12cab0f476475ea76b9b4cb637&q=%@&page=1", self.search];
+    NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=29f2a594050bcf25be3fd8071f18924d&q=%@&page=1", self.search];
     NSURL *url = [NSURL URLWithString:inPutUrl];
     NSURLRequest* request = [NSURLRequest requestWithURL: url];
     NSURLSessionTask* task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^
@@ -182,9 +214,9 @@
 }
 
 
--(void)viewDidAppear:(BOOL)animated {
-    self.isInTransit = true;
-}
+//-(void)viewDidAppear:(BOOL)animated {
+//    self.isInTransit = true;
+//}
 -(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
     if (event.type == UIEventSubtypeMotionShake) {
         if (self.isInTransit) {
@@ -205,13 +237,13 @@
 //        }
 //    }
 //}
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    if(collectionView == self.ingredientsCollectionVC){
-        self.search = @"chicken";
-        [self fetchData];
-    }
-    
+//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+//    if(collectionView == self.ingredientsCollectionVC){
+//        self.search = @"chicken";
+//        [self fetchData];
+//    }
+//    
+//}
+
 }
-
-
 @end

@@ -7,26 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		072FD7242204B4CE00F83CEC /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD7232204B4CE00F83CEC /* logo.png */; };
-		072FD7342204B6B400F83CEC /* twitter_profile_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD7252204B6B200F83CEC /* twitter_profile_image.png */; };
-		072FD7352204B6B400F83CEC /* facebook_profile_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD7262204B6B200F83CEC /* facebook_profile_image.png */; };
-		072FD7362204B6B400F83CEC /* pinterest_profile_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD7272204B6B200F83CEC /* pinterest_profile_image.png */; };
-		072FD7372204B6B400F83CEC /* facebook_cover_photo_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD7282204B6B200F83CEC /* facebook_cover_photo_2.png */; };
-		072FD7382204B6B400F83CEC /* twitter_header_photo_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD7292204B6B300F83CEC /* twitter_header_photo_2.png */; };
-		072FD7392204B6B400F83CEC /* linkedin_profile_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD72A2204B6B300F83CEC /* linkedin_profile_image.png */; };
-		072FD73A2204B6B400F83CEC /* pinterest_board_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD72B2204B6B300F83CEC /* pinterest_board_photo.png */; };
-		072FD73B2204B6B400F83CEC /* instagram_profile_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD72C2204B6B300F83CEC /* instagram_profile_image.png */; };
-		072FD73C2204B6B400F83CEC /* twitter_header_photo_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD72D2204B6B300F83CEC /* twitter_header_photo_1.png */; };
-		072FD73D2204B6B400F83CEC /* logo_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD72E2204B6B300F83CEC /* logo_transparent.png */; };
-		072FD73E2204B6B400F83CEC /* facebook_cover_photo_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD72F2204B6B300F83CEC /* facebook_cover_photo_1.png */; };
-		072FD73F2204B6B400F83CEC /* linkedin_banner_image_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD7302204B6B400F83CEC /* linkedin_banner_image_1.png */; };
-		072FD7402204B6B400F83CEC /* linkedin_banner_image_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD7312204B6B400F83CEC /* linkedin_banner_image_2.png */; };
-		072FD7412204B6B400F83CEC /* favicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD7322204B6B400F83CEC /* favicon.png */; };
-		072FD7422204B6B400F83CEC /* youtube_profile_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD7332204B6B400F83CEC /* youtube_profile_image.png */; };
+		072FD74722061A7B00F83CEC /* burger.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD74622061A7B00F83CEC /* burger.png */; };
+		072FD74C22061FBA00F83CEC /* pizza.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD74822061FB900F83CEC /* pizza.png */; };
+		072FD74D22061FBA00F83CEC /* burger2.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD74922061FBA00F83CEC /* burger2.png */; };
+		072FD74E22061FBA00F83CEC /* burger.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD74A22061FBA00F83CEC /* burger.png */; };
+		072FD74F22061FBA00F83CEC /* pasta.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD74B22061FBA00F83CEC /* pasta.png */; };
+		072FD75122062E5200F83CEC /* logo_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD75022062E5200F83CEC /* logo_transparent.png */; };
 		07EDDA522202179A002CB951 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EDDA512202179A002CB951 /* AppDelegate.m */; };
 		07EDDA552202179A002CB951 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EDDA542202179A002CB951 /* ViewController.m */; };
 		07EDDA5A2202179C002CB951 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07EDDA592202179C002CB951 /* Assets.xcassets */; };
-		07EDDA5D2202179C002CB951 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07EDDA5B2202179C002CB951 /* LaunchScreen.storyboard */; };
 		07EDDA602202179C002CB951 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EDDA5F2202179C002CB951 /* main.m */; };
 		07EDDA6B22023777002CB951 /* FoodSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EDDA6A22023777002CB951 /* FoodSearch.m */; };
 		07EDDA6E22024FFB002CB951 /* ColourAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EDDA6D22024FFB002CB951 /* ColourAnimator.m */; };
@@ -35,34 +24,24 @@
 		07EDDA8A22027AC6002CB951 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EDDA8322027AC6002CB951 /* DetailViewController.m */; };
 		07EDDA8B22027AC6002CB951 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EDDA8422027AC6002CB951 /* Recipe.m */; };
 		07EDDA8C22027AC6002CB951 /* IngredientCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EDDA8622027AC6002CB951 /* IngredientCollectionViewCell.m */; };
+		1B9F5E8E8959056EAF02446D /* libPods-Taste.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D0155F88195933D2F9643C9 /* libPods-Taste.a */; };
 		634C803A2203C95E0044A6DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 634C80392203C95E0044A6DF /* Main.storyboard */; };
 		634C80402204CC0A0044A6DF /* IngredientsData.m in Sources */ = {isa = PBXBuildFile; fileRef = 634C803F2204CC0A0044A6DF /* IngredientsData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		072FD7232204B4CE00F83CEC /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
-		072FD7252204B6B200F83CEC /* twitter_profile_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_profile_image.png; sourceTree = "<group>"; };
-		072FD7262204B6B200F83CEC /* facebook_profile_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_profile_image.png; sourceTree = "<group>"; };
-		072FD7272204B6B200F83CEC /* pinterest_profile_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinterest_profile_image.png; sourceTree = "<group>"; };
-		072FD7282204B6B200F83CEC /* facebook_cover_photo_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_cover_photo_2.png; sourceTree = "<group>"; };
-		072FD7292204B6B300F83CEC /* twitter_header_photo_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_header_photo_2.png; sourceTree = "<group>"; };
-		072FD72A2204B6B300F83CEC /* linkedin_profile_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedin_profile_image.png; sourceTree = "<group>"; };
-		072FD72B2204B6B300F83CEC /* pinterest_board_photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinterest_board_photo.png; sourceTree = "<group>"; };
-		072FD72C2204B6B300F83CEC /* instagram_profile_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = instagram_profile_image.png; sourceTree = "<group>"; };
-		072FD72D2204B6B300F83CEC /* twitter_header_photo_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_header_photo_1.png; sourceTree = "<group>"; };
-		072FD72E2204B6B300F83CEC /* logo_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_transparent.png; sourceTree = "<group>"; };
-		072FD72F2204B6B300F83CEC /* facebook_cover_photo_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_cover_photo_1.png; sourceTree = "<group>"; };
-		072FD7302204B6B400F83CEC /* linkedin_banner_image_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedin_banner_image_1.png; sourceTree = "<group>"; };
-		072FD7312204B6B400F83CEC /* linkedin_banner_image_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linkedin_banner_image_2.png; sourceTree = "<group>"; };
-		072FD7322204B6B400F83CEC /* favicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favicon.png; sourceTree = "<group>"; };
-		072FD7332204B6B400F83CEC /* youtube_profile_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youtube_profile_image.png; sourceTree = "<group>"; };
+		072FD74622061A7B00F83CEC /* burger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = burger.png; sourceTree = "<group>"; };
+		072FD74822061FB900F83CEC /* pizza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pizza.png; sourceTree = "<group>"; };
+		072FD74922061FBA00F83CEC /* burger2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = burger2.png; sourceTree = "<group>"; };
+		072FD74A22061FBA00F83CEC /* burger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = burger.png; path = ../../../foodPics/burger.png; sourceTree = "<group>"; };
+		072FD74B22061FBA00F83CEC /* pasta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pasta.png; sourceTree = "<group>"; };
+		072FD75022062E5200F83CEC /* logo_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_transparent.png; sourceTree = "<group>"; };
 		07EDDA4D2202179A002CB951 /* Taste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07EDDA502202179A002CB951 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		07EDDA512202179A002CB951 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		07EDDA532202179A002CB951 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		07EDDA542202179A002CB951 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		07EDDA592202179C002CB951 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		07EDDA5C2202179C002CB951 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07EDDA5E2202179C002CB951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07EDDA5F2202179C002CB951 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		07EDDA6922023777002CB951 /* FoodSearch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoodSearch.h; sourceTree = "<group>"; };
@@ -82,6 +61,9 @@
 		634C80392203C95E0044A6DF /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		634C803E2204CC0A0044A6DF /* IngredientsData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IngredientsData.h; sourceTree = "<group>"; };
 		634C803F2204CC0A0044A6DF /* IngredientsData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IngredientsData.m; sourceTree = "<group>"; };
+		7D0155F88195933D2F9643C9 /* libPods-Taste.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Taste.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0E172219732910A47C8E2E4 /* Pods-Taste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taste.release.xcconfig"; path = "Pods/Target Support Files/Pods-Taste/Pods-Taste.release.xcconfig"; sourceTree = "<group>"; };
+		FC2888AAA7D9226B753DB5C6 /* Pods-Taste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taste.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Taste/Pods-Taste.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B9F5E8E8959056EAF02446D /* libPods-Taste.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,22 +81,12 @@
 		072FD7222204B4B700F83CEC /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				072FD7232204B4CE00F83CEC /* logo.png */,
-				072FD72F2204B6B300F83CEC /* facebook_cover_photo_1.png */,
-				072FD7282204B6B200F83CEC /* facebook_cover_photo_2.png */,
-				072FD7262204B6B200F83CEC /* facebook_profile_image.png */,
-				072FD7322204B6B400F83CEC /* favicon.png */,
-				072FD72C2204B6B300F83CEC /* instagram_profile_image.png */,
-				072FD7302204B6B400F83CEC /* linkedin_banner_image_1.png */,
-				072FD7312204B6B400F83CEC /* linkedin_banner_image_2.png */,
-				072FD72A2204B6B300F83CEC /* linkedin_profile_image.png */,
-				072FD72E2204B6B300F83CEC /* logo_transparent.png */,
-				072FD72B2204B6B300F83CEC /* pinterest_board_photo.png */,
-				072FD7272204B6B200F83CEC /* pinterest_profile_image.png */,
-				072FD72D2204B6B300F83CEC /* twitter_header_photo_1.png */,
-				072FD7292204B6B300F83CEC /* twitter_header_photo_2.png */,
-				072FD7252204B6B200F83CEC /* twitter_profile_image.png */,
-				072FD7332204B6B400F83CEC /* youtube_profile_image.png */,
+				072FD75022062E5200F83CEC /* logo_transparent.png */,
+				072FD74A22061FBA00F83CEC /* burger.png */,
+				072FD74922061FBA00F83CEC /* burger2.png */,
+				072FD74B22061FBA00F83CEC /* pasta.png */,
+				072FD74822061FB900F83CEC /* pizza.png */,
+				072FD74622061A7B00F83CEC /* burger.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -123,6 +96,8 @@
 			children = (
 				07EDDA4F2202179A002CB951 /* Taste */,
 				07EDDA4E2202179A002CB951 /* Products */,
+				4AC2ACF628455D058F5C6847 /* Pods */,
+				608AD13656E9C9641735F905 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,11 +135,27 @@
 				07EDDA6922023777002CB951 /* FoodSearch.h */,
 				07EDDA6A22023777002CB951 /* FoodSearch.m */,
 				07EDDA592202179C002CB951 /* Assets.xcassets */,
-				07EDDA5B2202179C002CB951 /* LaunchScreen.storyboard */,
 				07EDDA5E2202179C002CB951 /* Info.plist */,
 				07EDDA5F2202179C002CB951 /* main.m */,
 			);
 			path = Taste;
+			sourceTree = "<group>";
+		};
+		4AC2ACF628455D058F5C6847 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FC2888AAA7D9226B753DB5C6 /* Pods-Taste.debug.xcconfig */,
+				F0E172219732910A47C8E2E4 /* Pods-Taste.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		608AD13656E9C9641735F905 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D0155F88195933D2F9643C9 /* libPods-Taste.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +165,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07EDDA632202179C002CB951 /* Build configuration list for PBXNativeTarget "Taste" */;
 			buildPhases = (
+				DB5ABD713DCB3E759FB7BE38 /* [CP] Check Pods Manifest.lock */,
 				07EDDA492202179A002CB951 /* Sources */,
 				07EDDA4A2202179A002CB951 /* Frameworks */,
 				07EDDA4B2202179A002CB951 /* Resources */,
@@ -224,29 +216,43 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				072FD7362204B6B400F83CEC /* pinterest_profile_image.png in Resources */,
-				072FD7402204B6B400F83CEC /* linkedin_banner_image_2.png in Resources */,
-				072FD7412204B6B400F83CEC /* favicon.png in Resources */,
-				072FD7242204B4CE00F83CEC /* logo.png in Resources */,
-				072FD73B2204B6B400F83CEC /* instagram_profile_image.png in Resources */,
-				072FD73F2204B6B400F83CEC /* linkedin_banner_image_1.png in Resources */,
-				072FD7352204B6B400F83CEC /* facebook_profile_image.png in Resources */,
-				07EDDA5D2202179C002CB951 /* LaunchScreen.storyboard in Resources */,
-				072FD73E2204B6B400F83CEC /* facebook_cover_photo_1.png in Resources */,
-				072FD7342204B6B400F83CEC /* twitter_profile_image.png in Resources */,
-				072FD73C2204B6B400F83CEC /* twitter_header_photo_1.png in Resources */,
-				072FD7392204B6B400F83CEC /* linkedin_profile_image.png in Resources */,
-				072FD7382204B6B400F83CEC /* twitter_header_photo_2.png in Resources */,
-				072FD7422204B6B400F83CEC /* youtube_profile_image.png in Resources */,
+				072FD74C22061FBA00F83CEC /* pizza.png in Resources */,
+				072FD74F22061FBA00F83CEC /* pasta.png in Resources */,
+				072FD74E22061FBA00F83CEC /* burger.png in Resources */,
+				072FD75122062E5200F83CEC /* logo_transparent.png in Resources */,
+				072FD74D22061FBA00F83CEC /* burger2.png in Resources */,
 				07EDDA5A2202179C002CB951 /* Assets.xcassets in Resources */,
 				634C803A2203C95E0044A6DF /* Main.storyboard in Resources */,
-				072FD7372204B6B400F83CEC /* facebook_cover_photo_2.png in Resources */,
-				072FD73A2204B6B400F83CEC /* pinterest_board_photo.png in Resources */,
-				072FD73D2204B6B400F83CEC /* logo_transparent.png in Resources */,
+				072FD74722061A7B00F83CEC /* burger.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DB5ABD713DCB3E759FB7BE38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Taste-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		07EDDA492202179A002CB951 /* Sources */ = {
@@ -268,17 +274,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		07EDDA5B2202179C002CB951 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				07EDDA5C2202179C002CB951 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		07EDDA612202179C002CB951 /* Debug */ = {
@@ -395,6 +390,7 @@
 		};
 		07EDDA642202179C002CB951 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC2888AAA7D9226B753DB5C6 /* Pods-Taste.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -412,6 +408,7 @@
 		};
 		07EDDA652202179C002CB951 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0E172219732910A47C8E2E4 /* Pods-Taste.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

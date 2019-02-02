@@ -1,0 +1,16 @@
+PODS:
+  - BlurView (1.1)
+
+DEPENDENCIES:
+  - BlurView (~> 1.1)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - BlurView
+
+SPEC CHECKSUMS:
+  BlurView: 04ec9fd1216fad0c9f9a495ea51b4aaadae26139
+
+PODFILE CHECKSUM: f4fb4fc1499c26f191b7a164cb5cacd011a4f708
+
+COCOAPODS: 1.5.3
