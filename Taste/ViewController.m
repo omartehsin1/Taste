@@ -102,6 +102,7 @@
     visualEffectView.alpha = 1.0f;
     
     [self.backgroundImageView addSubview:visualEffectView];
+}
 -(void)inputSelector{
     if (self.stringFromIngredient == nil){
         self.search = self.textTyped.text;
@@ -118,7 +119,7 @@
     //7df844880c4f009dd6512ddf139787ba
     NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=7df844880c4f009dd6512ddf139787ba&q=%@&page=1", self.search];
     NSLog(@"%@", inPutUrl);
-    NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=29f2a594050bcf25be3fd8071f18924d&q=%@&page=1", self.search];
+    //NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=29f2a594050bcf25be3fd8071f18924d&q=%@&page=1", self.search];
     NSURL *url = [NSURL URLWithString:inPutUrl];
     NSURLRequest* request = [NSURLRequest requestWithURL: url];
     NSURLSessionTask* task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^
@@ -176,19 +177,6 @@
     }
 }
 
-//-(void) animateBackgroundColour {
-//    static NSInteger i = 0;
-//    NSArray *colours = [NSArray arrayWithObjects:[UIColor colorWithRed:(240.0/255.0) green:(171.0/255.0) blue:(141.0/255.0) alpha:1.0], [UIColor colorWithRed:(89/255.0) green:(47.0/255.0) blue:(88.0/255.0) alpha:1.0], [UIColor colorWithRed:(235.0/255.0) green:(38.0/255.0) blue:(50.0/255.0) alpha:1.0], nil];
-//    if (i >= [colours count]) {
-//        i = 0;
-//    }
-//    [UIView animateWithDuration:2.0 animations:^{
-//        self.backgroundview.backgroundColor = [colours objectAtIndex:i];
-//    } completion:^(BOOL finished) {
-//        i++;
-//    }];
-//
-//}
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     [self fetchData];
@@ -236,7 +224,7 @@
         }
 
 }
-
+}
 //-(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
 //    if (event.type == UIEventSubtypeMotionShake) {
 //        if (self.isInTransit) {
