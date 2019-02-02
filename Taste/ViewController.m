@@ -24,6 +24,7 @@
 @property (nonatomic) NSMutableArray* recepiesArray;
 //@property (weak, nonatomic) IBOutlet UIView *categoryView;
 @property (nonatomic) NSMutableArray* ingredientsArray;
+@property (nonatomic) NSArray* categoriesArray;
 @property (nonatomic) NSString* search;
 @property (nonatomic) IngredientsData* inData;
 @property (nonatomic) NSString* displayText;
@@ -37,6 +38,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *ingredientLabelThree;
 @property (weak, nonatomic) IBOutlet UILabel *ingredientLabelFour;
 @property (nonatomic, strong) NSArray<NSString *> *arrayData;
+@property (nonatomic) NSString* stringFromIngredient;
 
 @end
 
@@ -70,15 +72,22 @@
     self.isInTransit = true;
 }
 
+-(void)inputSelector{
+    if (self.stringFromIngredient == nil){
+        self.search = self.textTyped.text;
+    }
+        NSLog(@"At method: %@",self.search);
+    self.search = [self.search stringByReplacingOccurrencesOfString:@" " withString:@","];
+}
+
 -(void)fetchData{
-    if (self.search == nil) {
-        self.search = @"beef";
-    }
-    else if (self.search != nil ) {
-        self.search = [self.textTyped.text stringByReplacingOccurrencesOfString:@" " withString:@","];
-    }
+    [self inputSelector];
     //c789f525b805ab2555e68d38f5096b6f
-    NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=1aae8d12cab0f476475ea76b9b4cb637&q=%@&page=1", self.search];
+    //1aae8d12cab0f476475ea76b9b4cb637
+    //83bb7768cfd05a64993c12882f886084
+    //7df844880c4f009dd6512ddf139787ba
+    NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=7df844880c4f009dd6512ddf139787ba&q=%@&page=1", self.search];
+    NSLog(@"%@", inPutUrl);
     NSURL *url = [NSURL URLWithString:inPutUrl];
     NSURLRequest* request = [NSURLRequest requestWithURL: url];
     NSURLSessionTask* task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^
@@ -108,6 +117,7 @@
     for (NSDictionary* ingredientsDictionary in self.inData.data) {
         Ingredient *theIngredient = [[Ingredient alloc]initWithDictionary:ingredientsDictionary];
         [self.ingredientsArray addObject:theIngredient];
+        self.categoriesArray = self.ingredientsArray;
     }
 }
 
@@ -150,7 +160,6 @@
 //}
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    //self.search = [str stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
     [self fetchData];
     [self.foodCollectionVC reloadData];
     [self.view endEditing:YES];
@@ -193,10 +202,16 @@
 //}
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if(collectionView == self.ingredientsCollectionVC){
-        self.search = @"chicken";
+        //self.textTyped.text = @"";
+        Ingredient* thisIngredient = self.categoriesArray[indexPath.item];
+        NSString* selectedIngredient = thisIngredient.text;
+        self.stringFromIngredient = selectedIngredient;
+        self.search = self.stringFromIngredient;
+        NSLog(@"At Cell :%@",self.search);
         [self fetchData];
+        self.stringFromIngredient = nil;
+        self.textTyped.text = @"";
     }
-    
 }
 
 @end
