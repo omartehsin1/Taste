@@ -13,6 +13,7 @@
 		072FD74E22061FBA00F83CEC /* burger.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD74A22061FBA00F83CEC /* burger.png */; };
 		072FD74F22061FBA00F83CEC /* pasta.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD74B22061FBA00F83CEC /* pasta.png */; };
 		072FD75122062E5200F83CEC /* logo_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD75022062E5200F83CEC /* logo_transparent.png */; };
+		072FD75722063F2300F83CEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072FD75622063F2300F83CEC /* LaunchScreen.storyboard */; };
 		07EDDA522202179A002CB951 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EDDA512202179A002CB951 /* AppDelegate.m */; };
 		07EDDA552202179A002CB951 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EDDA542202179A002CB951 /* ViewController.m */; };
 		07EDDA5A2202179C002CB951 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07EDDA592202179C002CB951 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		072FD74A22061FBA00F83CEC /* burger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = burger.png; path = ../../../foodPics/burger.png; sourceTree = "<group>"; };
 		072FD74B22061FBA00F83CEC /* pasta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pasta.png; sourceTree = "<group>"; };
 		072FD75022062E5200F83CEC /* logo_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_transparent.png; sourceTree = "<group>"; };
+		072FD75622063F2300F83CEC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07EDDA4D2202179A002CB951 /* Taste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07EDDA502202179A002CB951 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		07EDDA512202179A002CB951 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				634C80392203C95E0044A6DF /* Main.storyboard */,
 				07EDDA502202179A002CB951 /* AppDelegate.h */,
 				07EDDA512202179A002CB951 /* AppDelegate.m */,
+				072FD75622063F2300F83CEC /* LaunchScreen.storyboard */,
 				07EDDA532202179A002CB951 /* ViewController.h */,
 				07EDDA542202179A002CB951 /* ViewController.m */,
 				07EDDA6C22024FFB002CB951 /* ColourAnimator.h */,
@@ -216,6 +219,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				072FD75722063F2300F83CEC /* LaunchScreen.storyboard in Resources */,
 				072FD74C22061FBA00F83CEC /* pizza.png in Resources */,
 				072FD74F22061FBA00F83CEC /* pasta.png in Resources */,
 				072FD74E22061FBA00F83CEC /* burger.png in Resources */,

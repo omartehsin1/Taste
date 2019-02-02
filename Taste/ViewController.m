@@ -68,20 +68,15 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateLabelFromTextField:)
                                                  name:UITextFieldTextDidChangeNotification
-                                               object:nil];
-    
-    
-    [self addBackgroundBlur];
-    [self animatingImages];
-    
-    
-    
+                                               object:nil];  
     
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     self.isInTransit = true;
+    [self addBackgroundBlur];
+    [self animatingImages];
 }
 
 -(void)animatingImages {
