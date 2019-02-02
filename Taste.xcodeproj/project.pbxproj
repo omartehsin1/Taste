@@ -34,7 +34,7 @@
 		072FD74622061A7B00F83CEC /* burger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = burger.png; sourceTree = "<group>"; };
 		072FD74822061FB900F83CEC /* pizza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pizza.png; sourceTree = "<group>"; };
 		072FD74922061FBA00F83CEC /* burger2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = burger2.png; sourceTree = "<group>"; };
-		072FD74A22061FBA00F83CEC /* burger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = burger.png; path = ../../../foodPics/burger.png; sourceTree = "<group>"; };
+		072FD74A22061FBA00F83CEC /* burger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = burger.png; sourceTree = "<group>"; };
 		072FD74B22061FBA00F83CEC /* pasta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pasta.png; sourceTree = "<group>"; };
 		072FD75022062E5200F83CEC /* logo_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_transparent.png; sourceTree = "<group>"; };
 		072FD75622063F2300F83CEC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
