@@ -112,7 +112,7 @@
     //1aae8d12cab0f476475ea76b9b4cb637
     //83bb7768cfd05a64993c12882f886084
     //7df844880c4f009dd6512ddf139787ba
-    NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=7df844880c4f009dd6512ddf139787ba&q=%@&page=1", self.search];
+    NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=cc98d96d3c76658e570343b16246d9f4&q=%@&page=1", self.search];
     NSLog(@"%@", inPutUrl);
     //NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=29f2a594050bcf25be3fd8071f18924d&q=%@&page=1", self.search];
     NSURL *url = [NSURL URLWithString:inPutUrl];
