@@ -18,7 +18,7 @@
 #import "UIImage+Blur.h"
 
 
-@interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate>
+@interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate, UISplitViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView* foodCollectionVC;
 @property (weak, nonatomic) IBOutlet UICollectionView* ingredientsCollectionVC;
 @property (nonatomic) NSArray<Recipe*> * recepiesData;
@@ -70,7 +70,7 @@
                                              selector:@selector(updateLabelFromTextField:)
                                                  name:UITextFieldTextDidChangeNotification
                                                object:nil];
-
+    self.splitViewController.delegate = self;
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -78,6 +78,14 @@
     self.isInTransit = true;
     [self addBackgroundBlur];
     [self animatingImages];
+}
+- (void)awakeFromNib{
+    [super awakeFromNib];
+    self.splitViewController.delegate = self;
+}
+
+- (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController{
+    return YES;
 }
 
 -(void)animatingImages {

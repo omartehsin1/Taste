@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ucf-zO-mTZ">
-    <device id="retina5_5" orientation="portrait">
+    <device id="ipad10_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,18 +15,18 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uWk-rD-OE1" userLabel="Background View">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1112"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qQK-Pw-sVa" userLabel="backgroundImage">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Ingredients" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hM7-lb-9JW">
-                                        <rect key="frame" x="20" y="72" width="374" height="30"/>
+                                        <rect key="frame" x="20" y="72" width="280" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -35,7 +35,7 @@
                                         </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D6M-HK-1Ad" userLabel="Text Display View">
-                                        <rect key="frame" x="0.0" y="197" width="414" height="51"/>
+                                        <rect key="frame" x="0.0" y="197" width="320" height="427"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTb-Aw-0yP" userLabel="Label1">
                                                 <rect key="frame" x="6" y="0.0" width="201" height="25"/>
@@ -103,7 +103,7 @@
                                         </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gtC-g5-Y0W">
-                                        <rect key="frame" x="0.0" y="105" width="414" height="92"/>
+                                        <rect key="frame" x="0.0" y="105" width="320" height="92"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="92" id="HUP-7o-lZ5"/>
@@ -165,7 +165,7 @@
                                         </connections>
                                     </collectionView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wdd-wY-SbG" userLabel="Bottom Collection View">
-                                        <rect key="frame" x="0.0" y="256" width="414" height="480"/>
+                                        <rect key="frame" x="0.0" y="632" width="320" height="480"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="480" id="Sfw-JP-kMo"/>
@@ -217,7 +217,10 @@
                                                 <connections>
                                                     <outlet property="foodImage" destination="beC-Mq-WP9" id="icM-6c-Vb0"/>
                                                     <outlet property="foodLabel" destination="aVH-lH-7Lv" id="TC1-n3-xQK"/>
-                                                    <segue destination="ez0-cW-DeR" kind="show" identifier="cellToDetail" id="1Gt-as-2fw"/>
+                                                    <segue destination="ez0-cW-DeR" kind="showDetail" identifier="cellToDetail" id="1Gt-as-2fw">
+                                                        <segue key="commit" inheritsFrom="parent" id="saI-zg-vKW"/>
+                                                        <segue key="preview" inheritsFrom="commit" id="d9y-qr-U05"/>
+                                                    </segue>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -269,19 +272,19 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1157.9710144927537" y="790.76086956521749"/>
+            <point key="canvasLocation" x="1146" y="791"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="3T8-wb-oeh">
             <objects>
                 <viewController id="ez0-cW-DeR" customClass="DetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D9J-7g-TdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xzo-7N-2uw">
-                                <rect key="frame" x="0.0" y="64" width="414" height="652"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="20" width="834" height="1072"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
@@ -303,7 +306,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GtB-jj-Ia7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2127.536231884058" y="784.23913043478262"/>
+            <point key="canvasLocation" x="789" y="1665"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Usb-zu-B9S">
@@ -311,7 +314,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hkh-dx-wqu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2b6-0b-NzG">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -321,19 +324,23 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ElK-ad-ib8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="164" y="792.95352323838085"/>
+            <point key="canvasLocation" x="472" y="791"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="xdP-1P-lq9">
             <objects>
                 <splitViewController id="ucf-zO-mTZ" sceneMemberID="viewController">
                     <connections>
-                        <segue destination="hkh-dx-wqu" kind="relationship" relationship="masterViewController" id="t3o-mI-Vuc"/>
+                        <segue destination="hkh-dx-wqu" kind="relationship" relationship="masterViewController" id="ypY-IZ-x0s"/>
+                        <segue destination="ez0-cW-DeR" kind="relationship" relationship="detailViewController" id="INX-Ch-ZsP"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IrW-kx-dYs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-839" y="819"/>
+            <point key="canvasLocation" x="-159" y="1626"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="INX-Ch-ZsP"/>
+    </inferredMetricsTieBreakers>
 </document>
