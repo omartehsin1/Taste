@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--TASTE-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -34,91 +34,73 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="WIx-iY-4Zf"/>
                                         </connections>
                                     </textField>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wdd-wY-SbG" userLabel="Bottom Collection View">
-                                        <rect key="frame" x="0.0" y="349" width="414" height="387"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="387" id="Sfw-JP-kMo"/>
-                                        </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rVP-5n-TTH">
-                                            <size key="itemSize" width="187" height="158"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="recipeCell" id="JvB-sF-Stq" customClass="RecipeCollectionViewCell">
-                                                <rect key="frame" x="0.0" y="0.0" width="187" height="158"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="187" height="158"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="beC-Mq-WP9">
-                                                            <rect key="frame" x="0.0" y="0.0" width="187" height="122"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" secondItem="beC-Mq-WP9" secondAttribute="height" multiplier="125:124" constant="64.016129032258064" id="SVa-At-rX3"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVH-lH-7Lv">
-                                                            <rect key="frame" x="0.0" y="114" width="184" height="44"/>
-                                                            <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="11.100000381469727"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </view>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="beC-Mq-WP9" secondAttribute="trailing" id="5a8-MD-TWk"/>
-                                                    <constraint firstItem="beC-Mq-WP9" firstAttribute="leading" secondItem="JvB-sF-Stq" secondAttribute="leading" id="KsT-Ae-jKu"/>
-                                                    <constraint firstItem="beC-Mq-WP9" firstAttribute="top" secondItem="JvB-sF-Stq" secondAttribute="top" id="Lkg-Rj-MG6"/>
-                                                    <constraint firstAttribute="bottom" secondItem="beC-Mq-WP9" secondAttribute="bottom" constant="36" id="QKc-bg-0wf"/>
-                                                    <constraint firstItem="aVH-lH-7Lv" firstAttribute="leading" secondItem="beC-Mq-WP9" secondAttribute="leading" id="cwk-1K-PDe"/>
-                                                    <constraint firstAttribute="bottom" secondItem="aVH-lH-7Lv" secondAttribute="bottom" id="jgz-12-HZo"/>
-                                                    <constraint firstItem="aVH-lH-7Lv" firstAttribute="trailing" secondItem="beC-Mq-WP9" secondAttribute="trailing" constant="-3" id="jzW-MQ-3tt"/>
-                                                    <constraint firstItem="aVH-lH-7Lv" firstAttribute="top" secondItem="beC-Mq-WP9" secondAttribute="bottom" constant="-8" id="nul-W1-kit"/>
-                                                </constraints>
-                                                <connections>
-                                                    <outlet property="foodImage" destination="beC-Mq-WP9" id="icM-6c-Vb0"/>
-                                                    <outlet property="foodLabel" destination="aVH-lH-7Lv" id="TC1-n3-xQK"/>
-                                                    <segue destination="ez0-cW-DeR" kind="show" identifier="cellToDetail" id="1Gt-as-2fw"/>
-                                                </connections>
-                                            </collectionViewCell>
-                                        </cells>
-                                    </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D6M-HK-1Ad" userLabel="Text Display View">
-                                        <rect key="frame" x="0.0" y="205" width="414" height="143"/>
+                                        <rect key="frame" x="0.0" y="197" width="414" height="51"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTb-Aw-0yP" userLabel="Label1">
-                                                <rect key="frame" x="8" y="8" width="181" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTb-Aw-0yP" userLabel="Label1">
+                                                <rect key="frame" x="6" y="0.0" width="201" height="25"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="201" id="9Rl-qA-6pB"/>
+                                                    <constraint firstAttribute="height" constant="25" id="tpB-rF-Ufp"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eu-4N-rE4" userLabel="Label2">
-                                                <rect key="frame" x="8" y="75" width="181" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eu-4N-rE4" userLabel="Label2">
+                                                <rect key="frame" x="6" y="25" width="201" height="25"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="Dgc-UZ-2TV"/>
+                                                    <constraint firstAttribute="width" constant="201" id="aSW-jP-V4g"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEW-xh-fJ9" userLabel="Label3">
-                                                <rect key="frame" x="236" y="8" width="178" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEW-xh-fJ9" userLabel="Label3">
+                                                <rect key="frame" x="203" y="0.0" width="201" height="25"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="201" id="0tJ-H1-jEG"/>
+                                                    <constraint firstAttribute="height" constant="25" id="7F0-J7-E2n"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMy-gx-7RR" userLabel="Label4">
-                                                <rect key="frame" x="236" y="75" width="178" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lkl-Mk-Dqa">
+                                                <rect key="frame" x="186" y="51" width="0.0" height="0.0"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMy-gx-7RR" userLabel="Label4">
+                                                <rect key="frame" x="203" y="30" width="201" height="25"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="201" id="5dd-Ep-ExP"/>
+                                                    <constraint firstAttribute="height" constant="25" id="Ogn-0x-PxW"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="oEW-xh-fJ9" firstAttribute="top" secondItem="D6M-HK-1Ad" secondAttribute="top" id="PvD-jc-ZzY"/>
+                                            <constraint firstItem="GMy-gx-7RR" firstAttribute="top" secondItem="oEW-xh-fJ9" secondAttribute="bottom" constant="5" id="TuW-17-Y2f"/>
+                                            <constraint firstItem="GMy-gx-7RR" firstAttribute="leading" secondItem="oEW-xh-fJ9" secondAttribute="leading" id="Wld-Ay-pbE"/>
+                                            <constraint firstItem="5eu-4N-rE4" firstAttribute="top" secondItem="fTb-Aw-0yP" secondAttribute="bottom" id="fKC-9a-aHG"/>
+                                            <constraint firstItem="5eu-4N-rE4" firstAttribute="leading" secondItem="fTb-Aw-0yP" secondAttribute="leading" id="lfx-iX-Xwo"/>
+                                            <constraint firstItem="fTb-Aw-0yP" firstAttribute="leading" secondItem="D6M-HK-1Ad" secondAttribute="leading" constant="6" id="rfR-5B-Iqc"/>
+                                            <constraint firstItem="oEW-xh-fJ9" firstAttribute="leading" secondItem="fTb-Aw-0yP" secondAttribute="trailing" constant="-4" id="wlS-t5-n8E"/>
+                                            <constraint firstItem="fTb-Aw-0yP" firstAttribute="top" secondItem="D6M-HK-1Ad" secondAttribute="top" id="zJo-IH-a4W"/>
+                                        </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gtC-g5-Y0W">
                                         <rect key="frame" x="0.0" y="105" width="414" height="92"/>
@@ -182,6 +164,64 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="5ZE-H0-0dA"/>
                                         </connections>
                                     </collectionView>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wdd-wY-SbG" userLabel="Bottom Collection View">
+                                        <rect key="frame" x="0.0" y="256" width="414" height="480"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="480" id="Sfw-JP-kMo"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rVP-5n-TTH">
+                                            <size key="itemSize" width="200" height="153"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="recipeCell" id="JvB-sF-Stq" customClass="RecipeCollectionViewCell">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="153"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="153"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="beC-Mq-WP9">
+                                                            <rect key="frame" x="0.0" y="0.0" width="200" height="130"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="200" id="DiO-4J-GkA"/>
+                                                                <constraint firstAttribute="height" constant="130" id="h18-tJ-swa"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVH-lH-7Lv">
+                                                            <rect key="frame" x="0.0" y="129" width="200" height="24"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="200" id="NRr-EL-B2P"/>
+                                                                <constraint firstAttribute="height" constant="24" id="WYH-6m-rPZ"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="11.100000381469727"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="aVH-lH-7Lv" firstAttribute="leading" secondItem="JvB-sF-Stq" secondAttribute="leading" id="Bcn-Lb-OYb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="beC-Mq-WP9" secondAttribute="trailing" id="G7V-Qt-eFg"/>
+                                                    <constraint firstAttribute="bottom" secondItem="aVH-lH-7Lv" secondAttribute="bottom" id="KgW-dN-VcQ"/>
+                                                    <constraint firstItem="beC-Mq-WP9" firstAttribute="top" secondItem="JvB-sF-Stq" secondAttribute="top" id="WdA-kN-Mwd"/>
+                                                    <constraint firstAttribute="trailing" secondItem="aVH-lH-7Lv" secondAttribute="trailing" id="aGl-H5-Qvq"/>
+                                                    <constraint firstItem="beC-Mq-WP9" firstAttribute="leading" secondItem="JvB-sF-Stq" secondAttribute="leading" id="c7T-q9-iQ8"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="foodImage" destination="beC-Mq-WP9" id="icM-6c-Vb0"/>
+                                                    <outlet property="foodLabel" destination="aVH-lH-7Lv" id="TC1-n3-xQK"/>
+                                                    <segue destination="ez0-cW-DeR" kind="show" identifier="cellToDetail" id="1Gt-as-2fw"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.054901960784313725" green="0.32941176470588235" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -191,11 +231,11 @@
                                     <constraint firstItem="gtC-g5-Y0W" firstAttribute="top" secondItem="hM7-lb-9JW" secondAttribute="bottom" constant="3" id="UY8-2M-8WE"/>
                                     <constraint firstAttribute="bottom" secondItem="Wdd-wY-SbG" secondAttribute="bottom" id="UyF-Os-lgR"/>
                                     <constraint firstItem="Wdd-wY-SbG" firstAttribute="leading" secondItem="D6M-HK-1Ad" secondAttribute="leading" id="YM1-NI-lRn"/>
-                                    <constraint firstItem="Wdd-wY-SbG" firstAttribute="top" secondItem="D6M-HK-1Ad" secondAttribute="bottom" constant="1" id="Zy5-Wa-OJG"/>
+                                    <constraint firstItem="Wdd-wY-SbG" firstAttribute="top" secondItem="D6M-HK-1Ad" secondAttribute="bottom" constant="8" id="Zy5-Wa-OJG"/>
                                     <constraint firstItem="Wdd-wY-SbG" firstAttribute="trailing" secondItem="D6M-HK-1Ad" secondAttribute="trailing" id="bjw-3R-bIY"/>
                                     <constraint firstItem="gtC-g5-Y0W" firstAttribute="top" secondItem="uWk-rD-OE1" secondAttribute="top" constant="105" id="hLz-8P-vUa"/>
                                     <constraint firstItem="Wdd-wY-SbG" firstAttribute="leading" secondItem="uWk-rD-OE1" secondAttribute="leading" id="jEO-WJ-n9o"/>
-                                    <constraint firstItem="D6M-HK-1Ad" firstAttribute="top" secondItem="gtC-g5-Y0W" secondAttribute="bottom" constant="8" symbolic="YES" id="muN-6A-27c"/>
+                                    <constraint firstItem="D6M-HK-1Ad" firstAttribute="top" secondItem="gtC-g5-Y0W" secondAttribute="bottom" id="muN-6A-27c"/>
                                     <constraint firstItem="gtC-g5-Y0W" firstAttribute="centerX" secondItem="hM7-lb-9JW" secondAttribute="centerX" id="tEF-iE-djT"/>
                                     <constraint firstItem="hM7-lb-9JW" firstAttribute="leading" secondItem="uWk-rD-OE1" secondAttribute="leading" constant="20" id="zfA-0e-rx1"/>
                                 </constraints>
@@ -210,11 +250,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="afC-DP-uri"/>
+                    <navigationItem key="navigationItem" title="TASTE" id="afC-DP-uri">
+                        <barButtonItem key="backBarButtonItem" title="👈🏼 more Taste" id="Hc8-jK-XEi"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="backgroundImageView" destination="qQK-Pw-sVa" id="Gr2-Vl-pWA"/>
                         <outlet property="backgroundview" destination="uWk-rD-OE1" id="0VI-J6-aK2"/>
                         <outlet property="foodCollectionVC" destination="Wdd-wY-SbG" id="QRk-6h-ka3"/>
+                        <outlet property="ingredientLabelFive" destination="Lkl-Mk-Dqa" id="k2J-dD-UWq"/>
                         <outlet property="ingredientLabelFour" destination="GMy-gx-7RR" id="s9t-q1-B61"/>
                         <outlet property="ingredientLabelOne" destination="fTb-Aw-0yP" id="IYf-Zj-Ej6"/>
                         <outlet property="ingredientLabelThree" destination="oEW-xh-fJ9" id="Yr1-u6-d4y"/>

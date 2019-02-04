@@ -39,6 +39,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *ingredientLabelTwo;
 @property (weak, nonatomic) IBOutlet UILabel *ingredientLabelThree;
 @property (weak, nonatomic) IBOutlet UILabel *ingredientLabelFour;
+@property (weak, nonatomic) IBOutlet UILabel *ingredientLabelFive;
 @property (nonatomic, strong) NSArray<NSString *> *arrayData;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (nonatomic) NSString* stringFromIngredient;
@@ -185,9 +186,11 @@
         self.arrayData = [self.textTyped.text componentsSeparatedByString:@" "];
 
         NSArray<UILabel*>* labels = @[self.ingredientLabelOne, self.ingredientLabelTwo,
-                                      self.ingredientLabelThree, self.ingredientLabelFour];
+                                      self.ingredientLabelThree, self.ingredientLabelFour, self.ingredientLabelFive];
         [self.arrayData enumerateObjectsUsingBlock:^(NSString * word, NSUInteger idx, BOOL * _Nonnull stop) {
-            labels[idx].text = word;
+            if (idx < 5){
+               labels[idx].text = word;
+            }
         }];
     }
 }
