@@ -55,17 +55,17 @@
     //[self animateBackgroundColour];
     //[self performBackgroundFade];
     self.foodCollectionVC.backgroundColor = [UIColor clearColor];
-//    self.categoryView.layer.cornerRadius = 15;
-//    self.categoryView.layer.masksToBounds = true;
+    //    self.categoryView.layer.cornerRadius = 15;
+    //    self.categoryView.layer.masksToBounds = true;
     
     self.foodCollectionVC.dataSource = self;
     self.foodCollectionVC.delegate = self;
     self.ingredientsCollectionVC.dataSource = self;
     self.ingredientsCollectionVC.delegate = self;
     
-   [self fetchData];
+    [self fetchData];
     self.arrayData = [[NSMutableArray alloc]init];
-
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateLabelFromTextField:)
                                                  name:UITextFieldTextDidChangeNotification
@@ -97,7 +97,7 @@
 
 
 -(void)addBackgroundBlur {
-
+    
     UIVisualEffect *blurEffect;
     blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleRegular];
     UIVisualEffectView *visualEffectView;
@@ -111,10 +111,10 @@
     if (self.stringFromIngredient == nil){
         self.search = self.textTyped.text;
     }
-        NSLog(@"At method: %@",self.search);
+    NSLog(@"At method: %@",self.search);
     self.search = [self.search stringByReplacingOccurrencesOfString:@" " withString:@","];
 }
-
+//dat fetiching method.
 -(void)fetchData{
     [self inputSelector];
     //c789f525b805ab2555e68d38f5096b6f
@@ -144,11 +144,11 @@
                                   [NSOperationQueue.mainQueue addOperationWithBlock:^{
                                       [self.foodCollectionVC reloadData];
                                   }];
-     
-                                  }];
+                                  
+                              }];
     [task resume];
 }
-
+//Method method takes the date from the IngredientsData instance and parces the data into a usable array ingredient objects.
 -(void)ingredientDataformatter{
     self.ingredientsArray = [[NSMutableArray alloc]init];
     for (NSDictionary* ingredientsDictionary in self.inData.data) {
@@ -157,8 +157,8 @@
         self.categoriesArray = self.ingredientsArray;
     }
 }
-
 #pragma mark - Collection View Delegate
+//Both collection view cells call this method to get its data, the if statement checks for which one it is and returns the appropriate cell to the respective collection view.
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     if (collectionView == self.foodCollectionVC) {
         RecipeCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"recipeCell" forIndexPath:indexPath];
@@ -174,6 +174,7 @@
         return inCell;
     }
 }
+// both collection view cells call this method, the if statement filters which one it is and returns the appropiate number of cells.
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     if (collectionView == self.foodCollectionVC){
         return self.recepiesData.count;
@@ -181,29 +182,29 @@
         return self.ingredientsArray.count;
     }
 }
+//text field calls data, reloads colection view.
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     [self fetchData];
     [self.foodCollectionVC reloadData];
     [self.view endEditing:YES];
     return true;
 }
-
+//update in real time the labels with the imput of the textfiel and display each word in a different lable.
 - (void)updateLabelFromTextField:(NSNotification *)notification{
- 
     if (notification.object == self.textTyped){
         self.textTyped = (UITextField *) notification.object;
         self.arrayData = [self.textTyped.text componentsSeparatedByString:@" "];
-
+        
         NSArray<UILabel*>* labels = @[self.ingredientLabelOne, self.ingredientLabelTwo,
                                       self.ingredientLabelThree, self.ingredientLabelFour, self.ingredientLabelFive];
         [self.arrayData enumerateObjectsUsingBlock:^(NSString * word, NSUInteger idx, BOOL * _Nonnull stop) {
             if (idx < 5){
-               labels[idx].text = word;
+                labels[idx].text = word;
             }
         }];
     }
 }
-
+//sends the info from the master view controller to the detail view controller.
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"cellToDetail"]){
         DetailViewController* dvc = [segue destinationViewController];
@@ -212,10 +213,7 @@
         dvc.recipeInfo = recipeFromCell;
     }
 }
-
-//-(void)viewDidAppear:(BOOL)animated {
-//    self.isInTransit = true;
-//}
+//method gets a random number and returns a selection from the first 6 cells when the phone is shaken.
 -(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
     if (event.type == UIEventSubtypeMotionShake) {
         if (self.isInTransit) {
@@ -227,19 +225,11 @@
             NSLog(@"shook!");
             self.isInTransit = false;
         }
+    }
 }
-}
-//-(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
-//    if (event.type == UIEventSubtypeMotionShake) {
-//        if (self.isInTransit) {
-//            self.isInTransit = false;
-//            [self performSegueWithIdentifier:@"cellToDetail" sender:self];
-//        }
-//    }
-//}
+//Method gest input from collectionview (categories or ingredients, they are the same) create an ingredient object from the selected cell in the collection view and get the "text" property and modifying the search property. also resets the textfield text.
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if(collectionView == self.ingredientsCollectionVC){
-        //self.textTyped.text = @"";
         Ingredient* thisIngredient = self.categoriesArray[indexPath.item];
         NSString* selectedIngredient = thisIngredient.text;
         self.stringFromIngredient = selectedIngredient;
