@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		072FD74722061A7B00F83CEC /* burger.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD74622061A7B00F83CEC /* burger.png */; };
 		072FD74C22061FBA00F83CEC /* pizza.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD74822061FB900F83CEC /* pizza.png */; };
 		072FD74D22061FBA00F83CEC /* burger2.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD74922061FBA00F83CEC /* burger2.png */; };
 		072FD74E22061FBA00F83CEC /* burger.png in Resources */ = {isa = PBXBuildFile; fileRef = 072FD74A22061FBA00F83CEC /* burger.png */; };
@@ -188,7 +187,7 @@
 		07EDDA452202179A002CB951 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Omar Tehsin";
 				TargetAttributes = {
 					07EDDA4C2202179A002CB951 = {
@@ -227,7 +226,6 @@
 				072FD74D22061FBA00F83CEC /* burger2.png in Resources */,
 				07EDDA5A2202179C002CB951 /* Assets.xcassets in Resources */,
 				634C803A2203C95E0044A6DF /* Main.storyboard in Resources */,
-				072FD74722061A7B00F83CEC /* burger.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

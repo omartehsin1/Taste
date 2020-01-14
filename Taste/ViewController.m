@@ -117,14 +117,17 @@
 //dat fetiching method.
 -(void)fetchData{
     [self inputSelector];
-    //c789f525b805ab2555e68d38f5096b6f
-    //1aae8d12cab0f476475ea76b9b4cb637
-    //83bb7768cfd05a64993c12882f886084
-    //7df844880c4f009dd6512ddf139787ba
-    //cc98d96d3c76658e570343b16246d9f4
-    NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=c789f525b805ab2555e68d38f5096b6f&q=%@&page=1", self.search];
-    NSLog(@"%@", inPutUrl);
-    //NSString *inPutUrl = [NSString stringWithFormat:@"https://www.food2fork.com/api/search?key=29f2a594050bcf25be3fd8071f18924d&q=%@&page=1", self.search];
+    
+    //api id => 977e2729
+    //api key =>  b488fe44480837e10c6bfe0045d79295
+    //api path => https://api.edamam.com/search
+    // example => https://api.edamam.com/search?app_id=977e2729&app_key=b488fe44480837e10c6bfe0045d79295&q=chicken
+    
+    NSString *inPutUrl = [NSString stringWithFormat:@"https://api.edamam.com/search?app_id=977e2729&app_key=b488fe44480837e10c6bfe0045d79295&q=%@", self.search];
+
+    //NSString *inPutUrl = @"https://api.edamam.com/search?app_id=977e2729&app_key=b488fe44480837e10c6bfe0045d79295&q=all";
+    
+    //NSLog(@"%@", inPutUrl);
     NSURL *url = [NSURL URLWithString:inPutUrl];
     NSURLRequest* request = [NSURLRequest requestWithURL: url];
     NSURLSessionTask* task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^
@@ -133,7 +136,7 @@
                                NSError * _Nullable error) {
                                   NSError* jsonError;
                                   NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data options: 0 error: &jsonError];
-                                  NSArray* recipeObjects = json[@"recipes"];
+                                  NSArray* recipeObjects = json[@"hits"];
                                   self.recepiesArray = [[NSMutableArray alloc]init];
                                   for (NSDictionary* recipeDictionary in recipeObjects){
                                       //Recipe* aRecipe = [Recipe fromJsonDictionary:recipeDictionary];
@@ -219,7 +222,7 @@
         if (self.isInTransit) {
             int randIdx = arc4random_uniform(5);
             NSLog(@"%i",randIdx);
-            RecipeCollectionViewCell *ascell = [self.foodCollectionVC cellForItemAtIndexPath:[NSIndexPath indexPathForItem:randIdx inSection:0]];
+            RecipeCollectionViewCell *ascell = (RecipeCollectionViewCell *)[self.foodCollectionVC cellForItemAtIndexPath:[NSIndexPath indexPathForItem:randIdx inSection:0]];
             [self.foodCollectionVC reloadData];
             [self performSegueWithIdentifier:@"cellToDetail" sender: ascell];
             NSLog(@"shook!");

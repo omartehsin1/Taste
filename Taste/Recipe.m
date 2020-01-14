@@ -14,9 +14,9 @@
 {
     self = [super init];
     if (self) {
-        self.label = key[@"title"];
-        self.imageURl = key[@"image_url"];
-        self.url = key[@"source_url"];
+        self.label = key[@"label"];
+        self.imageURl = key[@"image"];
+        self.url = key[@"url"];
     }
     return self;
 }
